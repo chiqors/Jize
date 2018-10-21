@@ -1,5 +1,5 @@
 # Ecommerce
 
-Brand Name : Jize
-Brand Type : Self Selling
-Database Name : db_ecommerce
+Brand Name : Jize<br>
+Brand Type : Self Selling<br>
+Database Name : db_ecommerce<<br>
