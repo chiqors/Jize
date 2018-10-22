@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="c_login.php">
+    <form action="<?php echo site_url("controllers/c_login.php") ?>">
         <div class="imgcontainer">
             <img src="<?php echo base_url() ?>/assets/img/sample_user.png" alt="Avatar" class="avatar">
         </div>
@@ -10,7 +10,7 @@
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>
-                
+            
             <button type="submit">Login</button>
             <label>
             <input type="checkbox" name="remember"> Remember me
