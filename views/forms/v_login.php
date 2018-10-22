@@ -1,5 +1,5 @@
 <div class="container">
-    <form action="<?php echo site_url("controllers/c_login.php") ?>">
+    <form action="<?php echo site_url("controllers/c_dologin.php") ?>" method="post">
         <div class="imgcontainer">
             <img src="<?php echo base_url() ?>/assets/img/sample_user.png" alt="Avatar" class="avatar">
         </div>
