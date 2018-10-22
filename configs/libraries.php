@@ -1,6 +1,6 @@
 <?php
-	//Alternatif
-	//define('BASE_URL','http://localhost/ecommerce');
+	/*Alternatif Base URL
+	define('BASE_URL','http://localhost/ecommerce');*/
 
 	//Assets Routing
     function base_url() {

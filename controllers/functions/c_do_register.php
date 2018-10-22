@@ -1,6 +1,8 @@
 <?php
-    include '../configs/database.php';
-    include '../configs/libraries.php';
+    //Configurations
+    include '../../configs/database.php';
+    include '../../configs/libraries.php';
+
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $username = $_POST['username'];
@@ -8,8 +10,8 @@
     $reg = "INSERT INTO users VALUES('','$nama','$email','$username','$password','')";
     $query = mysqli_query($mysql,$reg);
     if ($query) {
-        header('Location:'. site_url("index"));
+        header('Location:'. site_url(""));
     } else {
         header('Location:'. site_url("about"));
-    } 
+    }
 ?>

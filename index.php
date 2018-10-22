@@ -1,7 +1,9 @@
 <?php
 
+//Configurations
 include 'configs/database.php';
 include 'configs/libraries.php';
+
 // Grabs the URI and breaks it apart in case we have querystring stuff
 $request_uri = explode('?', $_SERVER['REQUEST_URI'], 2);
 
@@ -36,7 +38,7 @@ switch ($request_uri[0]) {
         include __DIR__ . '/views/templates/v_header.php';
         include __DIR__ . '/views/forms/v_register.php';
         include __DIR__ . '/views/templates/v_footer.php';
-        break;    
+        break;
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');
