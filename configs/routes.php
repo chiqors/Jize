@@ -32,6 +32,9 @@ switch ($request_uri[0]) {
         include './views/forms/v_register.php';
         include './views/templates/v_footer.php';
         break;
+    case load_url().'/logout':
+        include './controllers/c_logout.php';
+        break;
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');

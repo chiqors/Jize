@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	/*Alternatif Base URL
 	define('BASE_URL','http://localhost/ecommerce');*/
 
