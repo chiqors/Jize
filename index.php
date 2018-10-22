@@ -30,6 +30,13 @@ switch ($request_uri[0]) {
         include __DIR__ . '/views/forms/v_login.php';
 		include __DIR__ . '/views/templates/v_footer.php';
         break;
+     // Register page
+     case load_url().'/login':
+        include __DIR__ . '/controllers/c_register.php';
+        include __DIR__ . '/views/templates/v_header.php';
+        include __DIR__ . '/views/forms/v_register.php';
+        include __DIR__ . '/views/templates/v_footer.php';
+        break;    
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');
