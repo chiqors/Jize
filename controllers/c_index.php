@@ -1,2 +1,3 @@
 <?php
-    echo @$_GET['name'];
+    //title name page
+    $title = "Home";
