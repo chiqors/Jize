@@ -42,6 +42,12 @@ switch ($request_uri[0]) {
         include './views/forms/v_input_product.php';
         include './views/templates/v_footer.php';
         break;
+    // Homepage product lists
+    case load_url().'/products':
+        include './views/templates/guest/v_header.php';
+        include './views/guest/v_products.php';
+        include './views/templates/guest/v_footer.php';
+        break;
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');

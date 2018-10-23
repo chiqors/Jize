@@ -5,10 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<title>JIZE</title>
 		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" href="<?= base_url('/assets/css/font-awesome.min.css') ?>">
+		<link rel="stylesheet" href="<?= base_url('/assets/css/bootstrap.min.css') ?>">
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,500,600,700|Raleway:400,500,600" rel="stylesheet">
-		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="<?= base_url('/assets/css/jize.css') ?>">
 		<?= isset($hscripts) ? $hscripts : '' ?>
 	</head>
 	<body>
