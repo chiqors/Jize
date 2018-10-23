@@ -25,15 +25,22 @@ switch ($request_uri[0]) {
         include './views/forms/v_login.php';
 		include './views/templates/v_footer.php';
         break;
+    case load_url().'/logout':
+        include './controllers/c_logout.php';
+        break;
      // Register page
-     case load_url().'/register':
+    case load_url().'/register':
         include './controllers/c_register.php';
         include './views/templates/v_header.php';
         include './views/forms/v_register.php';
         include './views/templates/v_footer.php';
         break;
-    case load_url().'/logout':
-        include './controllers/c_logout.php';
+    // Register input product
+    case load_url().'/input_product':
+        include './controllers/c_input_product.php';
+        include './views/templates/v_header.php';
+        include './views/forms/v_input_product.php';
+        include './views/templates/v_footer.php';
         break;
     // Everything else
     default:
