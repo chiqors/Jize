@@ -9,13 +9,13 @@
     $password = $_POST['password'];
     $kpassword = $_POST['kpassword'];
     if($password != $kpassword) {
+        $_SESSION['kpassword massage'] = "Konfirmasi Password Tidak Sesuai";
         header('Location:'. site_url("register"));
-    }
-    $reg = "INSERT INTO users VALUES('','$nama','$email','$username','$password','guest')";
-    $query = mysqli_query($mysql,$reg);
-    if ($query) {
-        header('Location:'. site_url("login"));
     } else {
-        header('Location:'. site_url("register"));
+        $reg = "INSERT INTO users VALUES('','$nama','$email','$username','$password','guest')";
+        $query = mysqli_query($mysql,$reg);
+        if ($query) {
+        header('Location:'. site_url("login"));
+        }
     }
 ?>
