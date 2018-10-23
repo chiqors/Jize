@@ -4,10 +4,8 @@
 	define('BASE_URL','http://localhost/ecommerce');*/
 
 	//Assets Routing
-    function base_url($path = false) {
-    	$assets = "";
-    	if($path) $assets = $path;
-		return "http://localhost/ecommerce".$assets;
+    function base_url() {
+		return "http://localhost/ecommerce";
 	}
 	//Pages Routing (index.php)
 	function load_url() {

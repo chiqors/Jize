@@ -6,10 +6,9 @@ switch ($request_uri[0]) {
     case load_url().'':
     case load_url().'/index':
     case load_url().'/':
-        include './controllers/c_index.php';
-		include './views/templates/v_header.php';
-        include './views/v_index.php';
-		include './views/templates/v_footer.php';
+        include './views/templates/guest/v_header.php';
+        include './views/guest/v_products.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // About page
     case load_url().'/about':
@@ -36,17 +35,11 @@ switch ($request_uri[0]) {
         include './views/templates/v_footer.php';
         break;
     // Register input product
-    case load_url().'/input_product':
+    case load_url().'/admin/input_product':
         include './controllers/c_input_product.php';
         include './views/templates/v_header.php';
         include './views/forms/v_input_product.php';
         include './views/templates/v_footer.php';
-        break;
-    // Homepage product lists
-    case load_url().'/products':
-        include './views/templates/guest/v_header.php';
-        include './views/guest/v_products.php';
-        include './views/templates/guest/v_footer.php';
         break;
     // Everything else
     default:
