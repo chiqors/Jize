@@ -1,0 +1,228 @@
+body {
+	background-color: #e3e3e4;
+	line-height: 24px;
+	font-size: 14px;
+}
+a {
+	transition: all .2s ease-in-out;
+	text-decoration: none !important;
+}
+a:hover {
+	color: #3958a8;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Lato';
+	font-weight: 600;
+	color: #888;
+}
+.container {
+	max-width: 1200px;
+}
+
+/*Button*/
+.btn {
+	box-shadow: none !important;
+	border-radius: 0;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+}
+.btn-warning {
+	padding: 8px 0;
+	color: #fff !important;
+}
+.btn-warning:hover {
+	color: ;
+}
+
+/*Config*/
+.bg-blue {
+	background-color: #3958a8;
+}
+.text-orange {
+	color: #f5bd18;
+}
+
+/*Navbar*/
+.navbar-jize {
+	background-color: #fff;
+	box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.08);
+}
+.navbar-jize .navbar-brand img {
+	height: 42px;
+}
+.form-search input, .form-search input:focus {
+	background: transparent;
+	border:none;
+	box-shadow: none !important;
+	background: #e3e3e4;
+	width: 700px;
+	border-radius: 0;
+	font-family: 'Raleway', sans-serif;
+	color: #999999;
+	font-weight: 600;
+	font-size: 14px;
+}
+.form-search input {
+	padding: 10px;
+	padding-left: 50px;
+	height: auto;
+}
+.form-search input:focus {
+	box-shadow: inset 0px 3px 6px 0px rgba(0, 0, 0, 0.08) !important;
+}
+.form-search:before {
+	content: '\f002';
+	font-family: 'FontAwesome';
+	font-size: 18px;
+	color: #888;
+	position: absolute;
+	top: 6px;
+	left: 15px;
+}
+.navbar-jize .navbar-nav .nav-link.no-bg {
+	background-color: transparent;
+	color: #888;
+	border-color: transparent;
+}
+.navbar-jize .navbar-nav .nav-link {
+	background-color: #3958a8;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	padding: 10px 20px;
+	margin-left: 15px !important;
+	border: 1px solid #3958a8;
+}
+.navbar-jize .navbar-nav .nav-link:hover {
+	background-color: #fff;
+	color: #3958a8;
+}
+
+.content-wrapper {
+	margin-top: 60px;
+}
+
+/*Sidebar*/
+.sidebar {
+	padding: 35px 30px;
+	color: #fff;
+}
+.sidebar-header h3 {
+	color: #888;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	padding-bottom: 30px;
+}
+.sidebar-body {
+	color: #888;
+}
+.sidebar.with-bg .sidebar-header h3 {
+	color: #fff;
+}
+.sidebar.with-bg .sidebar-body, .sidebar.with-bg .sidebar-body li, .sidebar.with-bg .sidebar-body a {
+	color: #fff;
+}
+.sidebar-body ul {
+	list-style-type: none;
+	padding: 0;
+}
+.sidebar-body ul li.header {
+	padding: 0;
+	padding-bottom: 10px;
+}
+.sidebar-body ul li {
+	color: #fff;
+	padding: 5px 0;
+}
+.sidebar .media-body {
+	margin-left: 10px;
+}
+.sidebar .media-body h4 {
+	font-size: 14px;
+	color: #fff;
+	margin: 0;
+}
+.sidebar .media-body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+}
+.sidebar .media-body span {
+	margin-bottom: -3px;
+}
+
+/*Product*/
+.product-item {
+	background-color: #f4f5f7;
+	border: 1px solid #ddd;
+	transition: box-shadow .2s ease-in-out;
+	position: relative;
+	margin-bottom: 30px;
+	height: 350px;
+}
+.product-thumbnail {
+	height: 225px;
+	overflow: hidden;
+}
+.product-thumbnail img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.product-content a:hover h3 {
+	color: #3958a8;
+}
+.product-content h3 {
+	font-size: 16px;
+	color: #666666;
+	transition: all .2s ease;
+}
+.product-content .price {
+	font-size: 18px;
+	font-weight: 600;
+	color: #3958a8;
+}
+.product-content .price .discount {
+	font-size: 14px;
+}
+.product-item:hover {
+	box-shadow: 0px 18px 17.28px 0.72px rgba(0, 0, 0, 0.14);
+}
+.button-product {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	left: 15px;
+	right: 15px;
+	bottom: 5px;
+	transition: bottom .2s ease-in-out, visibility .2s ease-in-out, opacity .2s ease-in-out;
+}
+.product-item:hover .button-product {
+	opacity: 1;
+	visibility: visible;
+	bottom: -25px;
+	transition: bottom .2s ease-in-out, visibility .2s ease-in-out, opacity .2s ease-in-out;
+}
+
+/*Pagination*/
+.pagination-jize .page-item .page-link {
+	font-size: 16px;
+	background-color: transparent;
+	color: #888;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+}
+.pagination-jize .page-item .page-link:hover {
+	color: #3958a8;
+}
+.pagination-jize .page-item {
+	margin: 3px;
+}
+.pagination-jize .page-item.active .page-link {
+	background-color: #3958a8;
+	color: #fff;
+	box-shadow: 0px 8px 13px 0px rgba(0, 0, 0, 0.13);
+	border: none;
+	border-radius: 5px;
+}
