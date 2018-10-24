@@ -67,11 +67,32 @@ switch ($request_uri[0]) {
         include './views/forms/v_register.php';
         include './views/templates/v_footer.php';
         break;
-    // Register page
+    // Setting page
     case load_url().'/settings':
         include './controllers/c_settings.php';
         include './views/templates/v_header.php';
         include './views/forms/v_settings.php';
+        include './views/templates/v_footer.php';
+        break;
+    // Carts page
+    case load_url().'/carts':
+        include './controllers/c_carts.php';
+        include './views/templates/v_header.php';
+        include './views/v_carts.php';
+        include './views/templates/v_footer.php';
+        break;
+    // Orders page
+    case load_url().'/Orders':
+        include './controllers/c_orders.php';
+        include './views/templates/v_header.php';
+        include './views/v_orders.php';
+        include './views/templates/v_footer.php';
+        break;
+    // Profile page
+    case load_url().'/profile':
+        include './controllers/c_profile.php';
+        include './views/templates/v_header.php';
+        include './views/v_profile.php';
         include './views/templates/v_footer.php';
         break;
     // Everything else
