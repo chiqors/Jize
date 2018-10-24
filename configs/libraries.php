@@ -20,4 +20,18 @@
 		}
 		return base_url();
 	}
+
+	//Call functions
+	class Fn
+	{
+		
+		function __call($name, $args)
+		{
+			if(function_exists($name)) {
+				return call_user_func_array($name, $args);
+			}
+		}
+	}
+
+	$fn = new Fn();
 ?>

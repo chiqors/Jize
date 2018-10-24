@@ -8,8 +8,8 @@
 		<link rel="stylesheet" href="<?= site_url('/assets/css/font-awesome.min.css') ?>">
 		<link rel="stylesheet" href="<?= site_url('/assets/css/bootstrap.min.css') ?>">
 		<link href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:400,500,600,700|Raleway:400,500,600" rel="stylesheet">
-		<link rel="stylesheet" href="<?= site_url('/assets/css/jize.css') ?>">
 		<?= isset($hscripts) ? $hscripts : '' ?>
+		<link rel="stylesheet" href="<?= site_url('/assets/css/jize.css') ?>">
 	</head>
 	<body>
 		<nav class="navbar navbar-jize navbar-expand-lg">
