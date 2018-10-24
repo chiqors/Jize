@@ -15,3 +15,14 @@
     } else {
         $title = "Products";
     }
+
+    // column settings
+    if(isset($_SESSION['loggedin'])) {
+        $mainColumn = 9;
+        $listColumn = 4;
+        $perPage = 9;
+    } else {
+        $mainColumn = 12;
+        $listColumn = 3;
+        $perPage = 12;
+    }
