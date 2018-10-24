@@ -22,9 +22,9 @@
                 <td><input type="password" name = "kpassword" placeholder = "Masukkan Konfirmasi Password Anda..." required></td>
                 <td>
                 <?php
-                    if (isset($_SESSION['kpassword massage'])) {
-                        echo $_SESSION['kpassword massage'];
-                        unset($_SESSION['kpassword massage']); 
+                    if (isset($_SESSION['kpassword_message'])) {
+                        echo $_SESSION['kpassword_message'];
+                        unset($_SESSION['kpassword_message']);
                     }
                 ?>
                 </td>

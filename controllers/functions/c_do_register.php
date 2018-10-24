@@ -9,7 +9,7 @@
     $password = $_POST['password'];
     $kpassword = $_POST['kpassword'];
     if($password != $kpassword) {
-        $_SESSION['kpassword massage'] = "Konfirmasi Password Tidak Sesuai";
+        $_SESSION['kpassword_message'] = "Konfirmasi Password Tidak Sesuai";
         header('Location:'. site_url("register"));
     } else {
         $reg = "INSERT INTO users VALUES('','$nama','$email','$username','$password','guest')";

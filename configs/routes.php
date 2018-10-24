@@ -2,13 +2,21 @@
 
 // Route it up!
 switch ($request_uri[0]) {
-    // Home page
+    // index product page
     case load_url().'':
     case load_url().'/index':
     case load_url().'/':
+        include './controllers/c_products.php';
         include './views/templates/guest/v_header.php';
         include './views/guest/v_products.php';
         include './views/templates/guest/v_footer.php';
+        break;
+    // home landing page
+    case load_url().'/home':
+        include './controllers/c_index.php';
+        include './views/templates/v_header.php';
+        include './views/guest/v_index.php';
+        include './views/templates/v_footer.php';
         break;
     // About page
     case load_url().'/about':
@@ -32,13 +40,6 @@ switch ($request_uri[0]) {
         include './controllers/c_register.php';
         include './views/templates/v_header.php';
         include './views/forms/v_register.php';
-        include './views/templates/v_footer.php';
-        break;
-    // Register input product
-    case load_url().'/admin/input_product':
-        include './controllers/c_input_product.php';
-        include './views/templates/v_header.php';
-        include './views/forms/v_input_product.php';
         include './views/templates/v_footer.php';
         break;
     // Everything else
