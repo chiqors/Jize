@@ -11,12 +11,12 @@
 
         $form 	= "Update Product";
         $btn = "Update";
-        $url 	= "controllers/functions/c_update_product.php";
+        $url 	= "controllers/functions/c_update_product.php?id=$id_product";
     } else {
         $title = "Products";
     }
 
-    // column settings
+    // Item Column Configurations
     if(isset($_SESSION['loggedin'])) {
         $mainColumn = 9;
         $listColumn = 4;

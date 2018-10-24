@@ -12,7 +12,7 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_footer.php';
         break;
     // Product details
-    case load_url().'/products/detail':
+    case load_url().'/product/detail':
         include './controllers/c_product_details.php';
         include './views/templates/guest/v_header.php';
         include './views/guest/v_product_details.php';
@@ -34,7 +34,7 @@ switch ($request_uri[0]) {
         break;
     // delete product
     case load_url().'/product/delete':
-        include './controllers/c_products.php';
+        include './controllers/functions/c_delete_product.php';
         break;
     // home landing page
     case load_url().'/home':

@@ -14,7 +14,7 @@
 	<body>
 		<nav class="navbar navbar-jize navbar-expand-lg">
 			<div class="container">
-				<a class="navbar-brand" href="/">
+				<a class="navbar-brand" href="<?= site_url("") ?>">
 					<img src="<?= site_url('/assets/img/logo.svg') ?>">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,7 +32,7 @@
 						</li>
 						<li class="nav-item">
 							<?php if(@$_SESSION['loggedin']) { ?>
-							<a class="nav-link" href="#"><i class="fa fa-user"></i> My Account</a>
+							<a class="nav-link" href="<?= site_url("profile")?>"><i class="fa fa-user"></i> My Account</a>
 							<?php } else { ?>
 							<a class="nav-link" href="<?= site_url("login")?>"><i class="fa fa-user"></i> Sign In</a>
 							<?php } ?>
