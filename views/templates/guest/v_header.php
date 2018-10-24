@@ -23,15 +23,19 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<form class="form-search position-relative mr-2">
+							<form class="form-search position-relative mr-2" action="<?= site_url("search") ?>" method="GET">
 								<input class="form-control" type="search" placeholder="Search" aria-label="Search">
 							</form>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link no-bg" href="#"><i class="fa fa-shopping-bag"></i> Cart</a>
+							<a class="nav-link no-bg" href="<?= site_url("cart") ?>"><i class="fa fa-shopping-bag"></i> Cart</a>
 						</li>
 						<li class="nav-item">
+							<?php if(@$_SESSION['loggedin']) { ?>
 							<a class="nav-link" href="#"><i class="fa fa-user"></i> My Account</a>
+							<?php } else { ?>
+							<a class="nav-link" href="<?= site_url("login")?>"><i class="fa fa-user"></i> Sign In</a>
+							<?php } ?>
 						</li>
 					</ul>
 				</div>
