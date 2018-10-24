@@ -1,4 +1,4 @@
-<div class="content-wrapper">
+<div class="content-wrapper mb-5">
 	<div class="container">
 		<div class="product-content-details mb-5">
 			<div class="row">
