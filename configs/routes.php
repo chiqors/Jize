@@ -60,6 +60,13 @@ switch ($request_uri[0]) {
         include './views/forms/v_register.php';
         include './views/templates/v_footer.php';
         break;
+    // Register page
+    case load_url().'/settings':
+        include './controllers/c_settings.php';
+        include './views/templates/v_header.php';
+        include './views/forms/v_settings.php';
+        include './views/templates/v_footer.php';
+        break;
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');
