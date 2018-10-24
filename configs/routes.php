@@ -82,7 +82,7 @@ switch ($request_uri[0]) {
         include './views/templates/v_footer.php';
         break;
     // Orders page
-    case load_url().'/Orders':
+    case load_url().'/orders':
         include './controllers/c_orders.php';
         include './views/templates/v_header.php';
         include './views/v_orders.php';
