@@ -11,6 +11,24 @@ switch ($request_uri[0]) {
         include './views/guest/v_products.php';
         include './views/templates/guest/v_footer.php';
         break;
+    // create product
+    case load_url().'/product/create':
+        include './controllers/c_products.php';
+        include './views/templates/guest/v_header.php';
+        include './views/forms/v_form_product.php';
+        include './views/templates/guest/v_footer.php';
+        break;
+    // update product
+    case load_url().'/product/update':
+        include './controllers/c_products.php';
+        include './views/templates/guest/v_header.php';
+        include './views/forms/v_form_product.php';
+        include './views/templates/guest/v_footer.php';
+        break;
+    // delete product
+    case load_url().'/product/delete':
+        include './controllers/c_products.php';
+        break;
     // home landing page
     case load_url().'/home':
         include './controllers/c_index.php';
