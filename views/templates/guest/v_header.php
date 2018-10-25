@@ -34,7 +34,7 @@
 							//@$total_cart = count($_SESSION['cart'])
 						?>
 						<li class="nav-item">
-							<a class="nav-link no-bg" href="<?= site_url("cart") ?>"><i class="fa fa-shopping-bag"></i> <?= @$total_cart ?>Carts</a>
+							<a class="nav-link no-bg" href="<?= site_url("carts") ?>"><i class="fa fa-shopping-bag"></i> <?= @$total_cart ?>Carts</a>
 						</li>
 						<li class="nav-item">
 							<?php if(@$_SESSION['loggedin']) { ?>
