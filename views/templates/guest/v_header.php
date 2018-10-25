@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -23,12 +23,18 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<form class="form-search position-relative mr-2" action="<?= site_url("search") ?>" method="GET">
-								<input class="form-control" type="search" placeholder="Search" aria-label="Search">
+							<form class="form-search position-relative mr-2" action="<?= site_url("index") ?>" method="GET">
+								<input class="form-control" type="search" placeholder="Search" name="search" aria-label="Search">
 							</form>
 						</li>
+						<?php
+							//Array Session
+							//$_SESSION['cart'][$sessID] = array ('quantity' => 1, 'price' => $prodPrice, 'prodName' => $prodName, 'size' => $size, 'handle' => $handle)
+							//Jumlahkan total cart
+							//@$total_cart = count($_SESSION['cart'])
+						?>
 						<li class="nav-item">
-							<a class="nav-link no-bg" href="<?= site_url("cart") ?>"><i class="fa fa-shopping-bag"></i> Cart</a>
+							<a class="nav-link no-bg" href="<?= site_url("cart") ?>"><i class="fa fa-shopping-bag"></i> <?= @$total_cart ?>Carts</a>
 						</li>
 						<li class="nav-item">
 							<?php if(@$_SESSION['loggedin']) { ?>

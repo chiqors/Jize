@@ -3,41 +3,51 @@
 		<div class="row product-contents">
 			<div class="col-lg-<?= $mainColumn ?>">
 				<div class="row">
-					<?php for($i=1;$i<=$perPage;$i++): ?>
+				<?php if(@$_SESSION['role'] == "admin") { ?>
+					<a href="<?= site_url("product/create") ?>" class="btn btn-primary btn-md"><i class="fa fa-plus" aria-hidden="true"></i> Create Product</a>
+				</div>
+				<?php } ?>
+				<div class="row">
+					<?php while ($row = $data->fetch_object()) { ?>
 					<div class="col-md-<?= $listColumn ?>">
 						<div class="product-item">
 							<?php if(@$_SESSION['role'] == "admin") { ?>
-							<div class="">
-								<a class="" href="<?= site_url("product/update?id=".$i) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-								<a class="" href="<?= site_url("product/delete?id=".$i) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+							<div class="product-item-tools">
+								<a class="" href="<?= site_url("product/update?id=".$row->id) ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+								<a class="" href="<?= site_url("product/delete?id=".$row->id) ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 							</div>
 							<?php } ?>
 							<div class="product-thumbnail">
-								<img src="<?= site_url('assets/img/tas.png') ?>" alt="">
+								<img src="<?= site_url("public/$row->id-$row->title/$row->images_path") ?>" alt="">
 							</div>
 							<div class="product-content text-center px-3 py-4">
-								<a href="#"><h3>ROG RANGER BACKPACK</h3></a>
+								<a href="#"><h3><?= $row->title ?></h3></a>
 								<div class="price">
-									<?php ?>
-									<span class="discount text-orange d-block"><del>Rp. 500rb</del></span>
-									<?php ?>
-									<span>Rp. 300rb</span>
+									<?php if(@$row->discount_price) { ?>
+									<span class="discount text-orange d-block"><del>Rp. <?= currencyShort($row->price) ?></del></span>
+									<span>Rp. <?= currencyShort($row->discount_price) ?></span>
+									<?php } else { ?>
+									<span>Rp. <?= currencyShort($row->price) ?></span>
+									<?php } ?>
 								</div>
 								<div class="button-product mt-3">
-									<a href="<?= site_url("product/detail?id=".$i)?>" class="btn btn-warning d-block">Lihat Produk</a>
+									<a href="<?= site_url("product/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<?php endfor; ?>
+					<?php } ?>
 				</div>
 				<div class="my-5">
 					<ul class="pagination pagination-jize justify-content-center">
-						<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item active"><a class="page-link" href="#">2</a></li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item"><a class="page-link" href="#">Next</a></li>
+						<!-- Pagination System -->
+						<?php for ($i=1; $i<=$pages ; $i++){ ?>
+						<li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+						<?php } ?>
+						<!-- Testing -->
+						<li class="page-item"><a class="page-link" href="?page=100">100 Test</a></li>
+						<li class="page-item active"><a class="page-link" href="?page=100">100 Test</a></li>
+						<li class="page-item"><a class="page-link" href="?page=100">100 Test</a></li>
 					</ul>
 				</div>
 			</div>
@@ -50,7 +60,7 @@
 							<div class="media-body">
 								<h4><?= $_SESSION['nama'] ?></h4>
 								<span class="d-block">Total Orders</span>
-								<strong><span class="text-orange">0</span></strong>
+								<strong><span class="text-orange"><?= @$total_cart ?>0</span></strong>
 							</div>
 						</div>
 					</div>

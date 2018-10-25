@@ -170,6 +170,9 @@ p {
 	margin-bottom: 30px;
 	height: 350px;
 }
+.product-item-tools {
+	position: absolute;
+}
 .product-thumbnail {
 	height: 225px;
 	overflow: hidden;
