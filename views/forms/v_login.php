@@ -12,6 +12,14 @@
                     unset($_SESSION['login_message']);
                 ?>
             </label>
+            <?php } ?>
+            <?php if(isset($_SESSION['fpassword_message'] )) { ?>
+            <label>
+                <?php
+                    echo $_SESSION['fpassword_message'];
+                    unset($_SESSION['fpassword_message']);
+                ?>
+            </label>
             <br><br>
             <?php } ?>
 
@@ -26,7 +34,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
             <button type="button" class="cancelbtn">Cancel</button>
-            <span class="psw">Forgot <a href="#">password?</a></span>
+            <span class="psw">Forgot <a href="<?php echo site_url("forget_password")?> ">password?</a></span>
         </div>
     </form>
 </div>

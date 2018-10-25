@@ -57,6 +57,14 @@ switch ($request_uri[0]) {
         include './views/forms/v_login.php';
 		include './views/templates/v_footer.php';
         break;
+    // Forget Password page
+    case load_url().'/forget_password':
+        include './controllers/c_forget_password.php';
+		include './views/templates/v_header.php';
+        include './views/forms/v_forget_password.php';
+        include './views/templates/v_footer.php';
+        break;
+    //Logout
     case load_url().'/logout':
         include './controllers/c_logout.php';
         break;

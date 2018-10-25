@@ -1,6 +1,6 @@
 <h3><?= $form ?></h3>
 <!-- Input Gambar Belum -->
-<form action="<?= $url ?>" method="post">
+<form action="<?= site_url($url) ?>" method="post" enctype = "multipart/form-data">
     <table>
         <tr>
             <td>Nama Produk</td>
@@ -16,6 +16,13 @@
         </tr>
             <td>Diskon</td>
             <td><input type="text" name="diskon" placeholder="Diskon" value="<?= @$discount ?>"></td>
-        <tr><td><input type="submit"></td></tr>
+        <tr>
+            <td>Gambar </td>
+            <td><input type="file" multiple name="gambar[]"></td>
+        </tr>
+        <tr>
+            <td>*Ctrl+Klik Gambar Untuk Multiple File*</td>
+        </tr>
+        <tr><td><input type="submit" name ="submit"></td></tr>
     </table>
 </form>

@@ -5,7 +5,7 @@
 
         $form 	= "Create Product";
         $btn = "Add";
-        $url 	= "controllers/functions/c_add_product.php";
+        $url 	= "controllers/functions/c_create_product.php";
     } else if($request_uri[0] == load_url()."/product/update") {
         $title = "Update Product";
 
