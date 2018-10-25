@@ -2,8 +2,8 @@
 	<div class="container">
 		<div class="row product-contents">
 			<div class="col-lg-<?= $mainColumn ?>">
-				<div class="row">
 				<?php if(@$_SESSION['role'] == "admin") { ?>
+				<div class="row">
 					<a href="<?= site_url("product/create") ?>" class="btn btn-primary btn-md"><i class="fa fa-plus" aria-hidden="true"></i> Create Product</a>
 				</div>
 				<?php } ?>
