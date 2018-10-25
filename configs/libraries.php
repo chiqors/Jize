@@ -21,13 +21,13 @@
 		return base_url();
 	}
 
-	// Rupiah Currency Shorter
+	// Rupiah Currency Shorter (rb,jt,m,tr)
 	function currencyShort($num) {
 		if($num>1000) {
 			  $x = round($num);
 			  $x_number_format = number_format($x);
 			  $x_array = explode(',', $x_number_format);
-			  $x_parts = array('rb', 'jt', 'tr', 'qu');
+			  $x_parts = array('rb', 'jt', 'm', 'tr');
 			  $x_count_parts = count($x_array) - 1;
 			  $x_display = $x;
 			  $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
