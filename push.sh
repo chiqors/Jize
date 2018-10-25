@@ -2,7 +2,7 @@
 
 git pull origin master
 
-echo "Push message: "
+echo -n "Push message: "
 read message
 
 git add .

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tombol</title>
+</head>
+<body>
+	<form action="" id="cart">
+		<button id="minus">-</button>
+		<input type="text" class="qty" min="1" value="0">
+		<button id="plus">+</button>
+	</form>
+	<script>
+		var plus = document.getElementById('plus');
+		var minus = document.getElementById('minus');
+
+		plus.addEventListener('click', function(ev) {
+			ev.preventDefault();
+			var child = this.parentNode.children[1];
+			child.value = parseInt(child.value)+1;
+		});
+
+		minus.addEventListener('click', function(ev) {
+			ev.preventDefault();
+			var child = this.parentNode.children[1];
+			if(child.value > 0) {
+				child.value = parseInt(child.value)-1;
+			}
+		});
+	</script>
+</body>
+</html>
