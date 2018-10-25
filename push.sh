@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull origin master
+
 echo "Push message: "
 read message
 
