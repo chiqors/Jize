@@ -12,7 +12,7 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_footer.php';
         break;
     // Product details
-    case load_url().'/product/detail':
+    case load_url().'/products/detail':
         include './controllers/c_product_details.php';
         include './views/templates/guest/v_header.php';
         include './views/guest/v_product_details.php';
@@ -34,7 +34,7 @@ switch ($request_uri[0]) {
         break;
     // delete product
     case load_url().'/product/delete':
-        include './controllers/functions/c_delete_product.php';
+        include './controllers/c_products.php';
         break;
     // home landing page
     case load_url().'/home':
@@ -57,14 +57,6 @@ switch ($request_uri[0]) {
         include './views/forms/v_login.php';
 		include './views/templates/v_footer.php';
         break;
-    // Forget Password page
-    case load_url().'/forget_password':
-        include './controllers/c_forget_password.php';
-		include './views/templates/v_header.php';
-        include './views/forms/v_forget_password.php';
-        include './views/templates/v_footer.php';
-        break;
-    //Logout
     case load_url().'/logout':
         include './controllers/c_logout.php';
         break;
@@ -88,6 +80,10 @@ switch ($request_uri[0]) {
         include './views/templates/v_header.php';
         include './views/v_carts.php';
         include './views/templates/v_footer.php';
+        break;
+    // Carts page
+    case load_url().'/carts/v_carts.php':
+        include './views/guest/v_carts.php';
         break;
     // Orders page
     case load_url().'/orders':
