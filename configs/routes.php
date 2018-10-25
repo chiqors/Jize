@@ -77,9 +77,9 @@ switch ($request_uri[0]) {
     // Carts page
     case load_url().'/carts':
         include './controllers/c_carts.php';
-        include './views/templates/v_header.php';
+        include './views/templates/guest/v_header.php';
         include './views/v_carts.php';
-        include './views/templates/v_footer.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // Carts page
     case load_url().'/carts/v_carts.php':
