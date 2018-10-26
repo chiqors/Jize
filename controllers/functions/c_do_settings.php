@@ -22,7 +22,16 @@
         header('Location:'. site_url());
         }
     }
-    $udetails =  "UPDATE user_details SET user_id='$id',address='$address',phone='$phone',postal_code='$postalcode' ";
+
+
+    $userDetails = $mysql->query("SELECT id FROM user_details WHERE user_id = $id");
+
+    if(mysqli_num_rows($userDetails) > 0) {
+        $udetails =  "UPDATE user_details SET address='$address',phone='$phone',postal_code='$postalcode' WHERE user_id = $id ";
+    } else {
+        $udetails =  "INSERT INTO user_details VALUES ('', $id, '$address', '$phone', '$postalcode')";
+    }
+    
     $query2=mysqli_query($mysql,$udetails);
     if ($query2) {
         header('Location:'. site_url());
