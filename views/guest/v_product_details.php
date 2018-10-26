@@ -24,9 +24,13 @@
 						</div>
 						<div class="border-bottom my-4"></div>
 						<div class="product-cart">
+							<form action="<?= $url ?>">
 							<span class="d-block">Quantity</span>
 							<input type="number" min="1" value="1">
-							<a href="<?= site_url("controller/functions/c_add_to_cart.php?id=".$product->id) ?>" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</a>
+							<input type="hidden" name="id" value="<?= $product->id ?>">
+							<button class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</button>
+							</form>
+							<?php print_r($_SESSION['cart']) ?>
 						</div>
 						<div class="product-description">
 							<p><?= $product->description ?></p>

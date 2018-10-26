@@ -34,6 +34,7 @@ FSCRIPTS;
 
 // escape string for revent sql injection
 $idProduct = mysqli_real_escape_string($mysql, $_GET['id']);
+$url    = site_url("controllers/functions/c_add_to_cart.php");
 
 // query
 $sql = "SELECT A.*, IF(A.discount > 0, (A.price - A.price * (A.discount/100)), null) AS discount_price FROM products AS A WHERE id = $idProduct";
@@ -54,7 +55,7 @@ $productImages = $mysql->query($sqlImages);
 // get featured products
 $featuredProducts = $mysql->query($sqlFeatured);
 
-// get data product and images
+// get data product
 $product = $product->fetch_object();
 
 ?>

@@ -1,4 +1,7 @@
 <?php
+
+include "../../configs/libraries.php";
+
 if(isset($_GET) & !empty($_GET)){
 	$id = $_GET['id'];
 	if(isset($_GET['quant']) & !empty($_GET['quant'])) {
@@ -7,7 +10,7 @@ if(isset($_GET) & !empty($_GET)){
         $quant = 1;
     }
 	$_SESSION['cart'][$id] = array("quantity" => $quant);
-	header('location:'.site_url("carts"));
+	header('location:'.site_url("product/detail?id=$id"));
 } else {
 	header('location:'.site_url(""));
 }
