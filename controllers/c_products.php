@@ -12,6 +12,13 @@
         $form 	= "Update Product";
         $btn = "Update";
         $url 	= "controllers/functions/c_update_product.php?id=$id_product";
+        $idProduct = mysqli_real_escape_string($mysql, $_GET['id']);
+        $product = $mysql->query("SELECT * FROM products WHERE id = $idProduct");
+
+        if(mysqli_num_rows($product) < 1) header("Location: {$fn->site_url()}");
+
+        $product = mysqli_fetch_object($product);
+
     } else {
         $title = "Products";
 
