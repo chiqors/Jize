@@ -89,6 +89,13 @@ switch ($request_uri[0]) {
         include './views/guest/v_carts.php';
         include './views/templates/guest/v_footer.php';
         break;
+    // Checkout page
+    case load_url().'/checkout':
+        include './controllers/c_checkout.php';
+        include './views/templates/guest/v_header.php';
+        include './views/guest/v_checkout.php';
+        include './views/templates/guest/v_footer.php';
+        break;
     // Orders page
     case load_url().'/orders':
         include './controllers/c_orders.php';

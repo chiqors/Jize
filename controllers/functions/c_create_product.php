@@ -16,17 +16,25 @@
         $product = $mysql->query("SELECT * FROM products WHERE id = $id ");
         $products = mysqli_fetch_object($product);
     
-        $path = "public/images/";
+        $path = 'public/products/'.$id.'/';
+        $dir = __DIR__.'/../../';
+        
+        //create directory if not exist
+        if(!file_exists($dir.$path)) {
+            mkdir($dir.$path, 0777, true);
+        }
+
         $gambar = $_FILES['gambar'];
-    
+
         for($i=0;$i<count($gambar['name']);$i++) {
             $namaFile = $path.$gambar['name'][$i];
     
             $query = sprintf("INSERT INTO product_images VALUES (NULL, %s, '%s', '%s')", $products->id, $gambar['name'][$i], $namaFile);
-            if(move_uploaded_file($gambar['tmp_name'][$i], __DIR__.'/../../'.$namaFile)) {
+            if(move_uploaded_file($gambar['tmp_name'][$i], $dir.$namaFile)) {
                 $mysql->query($query);
             }
         }
+        $_SESSION['createproduct_msg'] = "Data produk berhasil ditambahkan";
         header('Location:'. site_url(""));
     } else {
         $_SESSION['createproduct_msg'] = "Data produk tidak bisa ditambahkan";

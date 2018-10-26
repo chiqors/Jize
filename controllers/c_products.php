@@ -37,7 +37,7 @@
         $halaman = 10; //batasan halaman
         $page = isset($_GET['page']) ? (int)$_GET["page"] : 1;
         $mulai = ($page>1) ? ($page * $halaman) - $halaman : 0;
-        
+
         @$search = $_GET['search'];
 
         $sql_pagination = "SELECT * FROM products";

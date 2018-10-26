@@ -7,7 +7,7 @@
 						<?php while ($row = $productImages->fetch_object()): ?>
 						<a href="<?= site_url($row->image_path) ?>" data-fancybox="gallery">
 							<img src="<?= site_url($row->image_path) ?>" alt="">
-						</a>	
+						</a>
 						<?php endwhile ?>
 					</div>
 				</div>
@@ -23,6 +23,7 @@
 							<?php } ?>
 						</div>
 						<div class="border-bottom my-4"></div>
+						<?php if(@$_SESSION['loggedin']) { ?>
 						<div class="product-cart">
 							<form action="<?= $url ?>">
 							<span class="d-block">Quantity</span>
@@ -31,6 +32,7 @@
 							<button class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</button>
 							</form>
 						</div>
+						<?php } ?>
 						<div class="product-description">
 							<p><?= $product->description ?></p>
 						</div>
@@ -44,10 +46,12 @@
 				<div class="col-md-3">
 					<div class="product-item">
 						<div class="product-thumbnail">
-							<img src="<?= site_url($row->image_path) ?>" alt="">
+							<a href="<?= site_url("product/detail?id=".$row->id)?>">
+								<img src="<?= site_url($row->image_path) ?>" alt="">
+							</a>
 						</div>
 						<div class="product-content text-center px-3 py-4">
-							<a href="#"><h3><?= $row->title ?></h3></a>
+							<a href="#"><h3><?= ucfirst($row->title) ?></h3></a>
 							<div class="price">
 								<?php if(@$row->discount_price) { ?>
 								<span class="discount text-orange d-block"><del>Rp. <?= currencyShort($row->price) ?></del></span>
@@ -57,7 +61,7 @@
 								<?php } ?>
 							</div>
 							<div class="button-product mt-3">
-								<a href="<?= site_url("products/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
+								<a href="<?= site_url("product/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
 							</div>
 						</div>
 					</div>

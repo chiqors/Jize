@@ -27,22 +27,18 @@
 								<input class="form-control" type="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" placeholder="Search" name="search" aria-label="Search">
 							</form>
 						</li>
-						<?php
-							//Array Session
-							//$_SESSION['cart'][$sessID] = array ('quantity' => 1, 'price' => $prodPrice, 'prodName' => $prodName, 'size' => $size, 'handle' => $handle)
-							//Jumlahkan total cart
-							//@$total_cart = count($_SESSION['cart'])
-						?>
+						<?php if(@$_SESSION['loggedin']) { ?>
 						<li class="nav-item">
 							<a class="nav-link nav-cart no-bg" href="<?= site_url("carts") ?>"><i class="fa fa-shopping-bag"></i> Carts <span class="total-cart"><?= totalCart() ?></span></a>
 						</li>
 						<li class="nav-item">
-							<?php if(@$_SESSION['loggedin']) { ?>
 							<a class="nav-link" href="<?= site_url("profile")?>"><i class="fa fa-user"></i> My Account</a>
-							<?php } else { ?>
-							<a class="nav-link" href="<?= site_url("login")?>"><i class="fa fa-user"></i> Sign In</a>
-							<?php } ?>
 						</li>
+						<?php } else { ?>
+						<li class="nav-item">
+							<a class="nav-link" href="<?= site_url("login")?>"><i class="fa fa-user"></i> Sign In</a>
+						</li>
+						<?php } ?>
 					</ul>
 				</div>
 			</div>

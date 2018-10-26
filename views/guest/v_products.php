@@ -1,12 +1,34 @@
 <div class="content-wrapper">
 	<div class="container">
+		<?php if(!empty($_SESSION['createproduct_msg']) || !empty($_SESSION['updateproduct_msg']) || !empty($_SESSION['deleteproduct_msg'])) { ?>
+		<div class="row">
+			<div class="col-md-12">
+              	<div class="alert alert-info">
+					<?php
+						echo @$_SESSION['createproduct_msg'];
+						echo @$_SESSION['updateproduct_msg'];
+						echo @$_SESSION['deleteproduct_msg'];
+
+						unset($_SESSION['createproduct_msg']);
+						unset($_SESSION['updateproduct_msg']);
+						unset($_SESSION['deleteproduct_msg']);
+					?>
+              	</div>
+			</div>
+		</div>
+		<?php } ?>
+		<?php if(@$_SESSION['role'] == "admin") { ?>
+		<div class="row">
+			<div class="col-md-12">
+				<a href="<?= site_url("product/create") ?>" class="btn btn-primary btn-md"><i class="fa fa-plus" aria-hidden="true"></i> Create Product</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12"></div>
+		</div>
+		<?php } ?>
 		<div class="row product-contents">
 			<div class="col-lg-<?= $mainColumn ?>">
-				<?php if(@$_SESSION['role'] == "admin") { ?>
-				<div class="row">
-					<a href="<?= site_url("product/create") ?>" class="btn btn-primary btn-md"><i class="fa fa-plus" aria-hidden="true"></i> Create Product</a>
-				</div>
-				<?php } ?>
 				<div class="row">
 					<?php while ($row = $data->fetch_object()) { ?>
 					<div class="col-md-<?= $listColumn ?>">
@@ -18,10 +40,12 @@
 							</div>
 							<?php } ?>
 							<div class="product-thumbnail">
-								<img src="<?= site_url($row->image_path) ?>" alt="">
+								<a href="<?= site_url("product/detail?id=".$row->id)?>">
+									<img src="<?= site_url($row->image_path) ?>" alt="">
+								</a>
 							</div>
 							<div class="product-content text-center px-3 py-4">
-								<a href="<?= site_url("product/detail?id=".$row->id)?>"><h3><?= $row->title ?></h3></a>
+								<a href="<?= site_url("product/detail?id=".$row->id)?>"><h3><?= ucfirst($row->title) ?></h3></a>
 								<div class="price">
 									<?php if(@$row->discount_price) { ?>
 									<span class="discount text-orange d-block"><del>Rp. <?= currencyShort($row->price) ?></del></span>
@@ -42,12 +66,8 @@
 					<ul class="pagination pagination-jize justify-content-center">
 						<!-- Pagination System -->
 						<?php for ($i=1; $i<=$pages ; $i++){ ?>
-						<li class="page-item"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+						<li class="page-item <?= ($_GET[page]==$i||!isset($_GET[page])) ? 'active' : ''?>"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
 						<?php } ?>
-						<!-- Testing -->
-						<li class="page-item"><a class="page-link" href="?page=100">100 Test</a></li>
-						<li class="page-item active"><a class="page-link" href="?page=100">100 Test</a></li>
-						<li class="page-item"><a class="page-link" href="?page=100">100 Test</a></li>
 					</ul>
 				</div>
 			</div>
@@ -60,7 +80,7 @@
 							<div class="media-body">
 								<h4><?= $_SESSION['nama'] ?></h4>
 								<span class="d-block">Total Orders</span>
-								<strong><span class="text-orange"><?= @$total_cart ?>0</span></strong>
+								<strong><span class="text-orange"><?= totalCart() ?></span></strong>
 							</div>
 						</div>
 					</div>
