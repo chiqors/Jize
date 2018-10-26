@@ -9,6 +9,11 @@ if(isset($_GET) & !empty($_GET)){
     } else {
         $quant = 1;
     }
+
+    if(isset($_SESSION['cart'][$id]['quantity'])){
+    	$quant += $_SESSION['cart'][$id]['quantity'];
+    }
+
 	$_SESSION['cart'][$id] = array("quantity" => $quant);
 	header('location:'.site_url("product/detail?id=$id"));
 } else {

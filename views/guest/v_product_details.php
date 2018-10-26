@@ -26,11 +26,10 @@
 						<div class="product-cart">
 							<form action="<?= $url ?>">
 							<span class="d-block">Quantity</span>
-							<input type="number" min="1" value="1">
+							<input type="number" min="1" name="quant" value="1">
 							<input type="hidden" name="id" value="<?= $product->id ?>">
 							<button class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</button>
 							</form>
-							<?php print_r($_SESSION['cart']) ?>
 						</div>
 						<div class="product-description">
 							<p><?= $product->description ?></p>

@@ -4,52 +4,64 @@
 			<h1>Carts</h1>
 		</div>
 		<div class="row">
+			<form action="" method="post" style="width: 100%">
 			<table class="table table-striped bg-white table-cart">
 				<tr>
+					<th width="50px">#</th>
+					<th width="100px">Image</th>
 					<th>Product</th>
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Total</th>
 				</tr>
+				<?php
+				$price = 0;
+				$totalPrice = 0;
+				
+				if($carts):
+
+				while ($row = $carts->fetch_object()):
+
+				$price = $row->discount_price ? $row->discount_price : $row->price;
+				$qty = $_SESSION['cart'][$row->id]['quantity'];
+				$total = $price*$qty;
+				$totalPrice = 0;
+				$totalPrice += $total;
+
+				?>	
 				<tr>
-					<td width="30%" align="center"><img src="<?= site_url('assets/img/tas.png') ?>" alt="" style="width: 10%">ROG Ranger Pack</td>
-					<td align="center">Rp. 300rb</td>
-					<td width="10%" align="center">
+					<td class="align-middle"><a href="#" class="btn btn-link"><i class="fa fa-fw fa-close"></i></a></td>
+					<td><img class="thumbnail rounded" src="<?= site_url($row->image_path) ?>" alt="" width="80"></td>
+					<td width="30%" align="center" class="align-middle"><?= $row->title ?></td>
+					<td align="center" class="align-middle"><?= rupiah($price) ?></td>
+					<td width="10%" align="center"  class="align-middle">
 						<div class="nice-number">
-							<input type="number" class="form-control" value="0">
+							<input type="number" name="qty[<?= $row->id ?>]" class="form-control" value="<?= $qty ?>">
 						</div>
 					</td>
-					<td align="center">Rp. 300rb</td>
+					<td align="center"  class="align-middle"><?= rupiah($total) ?></td>
 				</tr>
+				<?php
+				endwhile;
+				else:
+				?>
 				<tr>
-					<td width="30%" align="center"><img src="<?= site_url('assets/img/tas.png') ?>" alt="" style="width: 10%">ROG Ranger Pack</td>
-					<td align="center">Rp. 300rb</td>
-					<td width="10%" align="center">
-						<div class="nice-number">
-							<input type="number" class="form-control" value="0">
-						</div>
-					</td>
-					<td align="center">Rp. 300rb</td>
+					<td class="align-middle" colspan="6" align="center">Tidak ada item cart</td>
 				</tr>
+				<?php
+				endif;
+				?>
 				<tr>
-					<td width="30%" align="center"><img src="<?= site_url('assets/img/tas.png') ?>" alt="" style="width: 10%">ROG Ranger Pack</td>
-					<td align="center">Rp. 300rb</td>
-					<td width="10%" align="center">
-						<div class="nice-number">
-							<input type="number" class="form-control" value="0">
-						</div>
-					</td>
-					<td align="center">Rp. 300rb</td>
-				</tr>
-				<tr>
-					<td colspan="2">
-						<h3 class="total-cart align-middle">Carts Total <span class="text-orange">Rp 1.5jt</span></h3>
+					<td colspan="3">
+						<h3 class="total-cart align-middle">Total <span class="text-orange"><?= rupiah($totalPrice) ?></span></h3>
 					</td>
 					<td colspan="3" align="right">
+						<button class="btn btn-add-cart" name="update"><i class="fa fa-refresh fa-fw"></i> Update Cart</button>
 						<a href="#" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down fa-fw"></i> Checkout</a>
 					</td>
 				</tr>
 			</table>
+			</form>
 		</div>
 		<div class="row">
 			<div class="col-md-6 push-md-6 no-padding">
@@ -58,7 +70,7 @@
 					<tbody>
 						<tr>
 							<th>Cart Subtotal</th>
-							<td><span class="amount">IDR 775.000.00/-</span></td>
+							<td><span class="amount"><?= rupiah($totalPrice) ?></span></td>
 						</tr>
 						<tr>
 							<th>Shipping and Handling</th>
@@ -66,7 +78,7 @@
 						</tr>
 						<tr>
 							<th>Order Total</th>
-							<td><strong><span class="amount">IDR 775.000.00/-</span></strong> </td>
+							<td><strong><span class="amount"><?= rupiah($totalPrice) ?></span></strong> </td>
 						</tr>
 					</tbody>
 				</table>
