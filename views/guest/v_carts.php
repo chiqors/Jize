@@ -46,7 +46,7 @@
 						<h3 class="total-cart align-middle">Carts Total <span class="text-orange">Rp 1.5jt</span></h3>
 					</td>
 					<td colspan="3" align="right">
-						<input type="button" value="CheckOut" class="btn" style="background-color: #3958a8;color: #fff;padding: 11px 35px;">
+						<a href="#" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down fa-fw"></i> Checkout</a>
 					</td>
 				</tr>
 			</table>
