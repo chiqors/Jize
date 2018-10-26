@@ -43,19 +43,19 @@
 		</nav>
 		<div class="content-wrapper mb-5">
 	<div class="container">
-		<table class="table table-striped bg-white">
+		<table class="table table-striped bg-white table-cart">
 			<tr>
-				<td width="30%" align="center">Product</td>
-				<td align="center">Price</td>
-				<td align="center">Quantity</td>
-				<td align="center">Total</td>
+				<th width="30%">Product</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Total</th>
 			</tr>
 			<tr>
 				<td width="30%" align="center"><img src="<?= site_url('assets/img/tas.png') ?>" alt="" style="width: 10%">ROG Ranger Pack</td>
 				<td align="center">Rp. 300rb</td>
 				<td width="10%" align="center">
 					<div class="nice-number">
-						<input type="number" value="0" style="width: 30%;">
+						<input type="number" class="form-control" value="0">
 					</div>
 				</td>
 				<td align="center">Rp. 300rb</td>
@@ -65,7 +65,7 @@
 				<td align="center">Rp. 300rb</td>
 				<td width="10%" align="center">
 					<div class="nice-number">
-						<input type="number" value="0" style="width: 30%;">
+						<input type="number" class="form-control" value="0">
 					</div>
 				</td>
 				<td align="center">Rp. 300rb</td>
@@ -75,21 +75,16 @@
 				<td align="center">Rp. 300rb</td>
 				<td width="10%" align="center">
 					<div class="nice-number">
-						<input type="number" value="0" style="width: 30%;">
+						<input type="number" class="form-control" value="0">
 					</div>
 				</td>
 				<td align="center">Rp. 300rb</td>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<form class="form-search position-relative mr-2" action="<?= site_url('search') ?>" method="GET">
-						<input class="form-control" type="search" placeholder="Total Cart" aria-label="Search" style="border-radius: 6px; width: 100% ">
-					</form>	
+					<h3 class="total-cart align-middle">Total Cart <span class="text-orange">Rp 1.5jt</span></h3>
 				</td>
-				<td>
-					<input type="button" value="Total Cart" class="btn" style="background-color: #3958a8;color: #fff;padding: 11px 35px;">
-				</td>
-				<td>
+				<td colspan="3" align="right">
 					<input type="button" value="CheckOut" class="btn" style="background-color: #3958a8;color: #fff;padding: 11px 35px;">
 				</td>
 			</tr>

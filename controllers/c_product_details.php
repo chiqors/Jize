@@ -32,4 +32,29 @@ $fscripts = <<<FSCRIPTS
 </script>
 FSCRIPTS;
 
+// escape string for revent sql injection
+$idProduct = mysqli_real_escape_string($mysql, $_GET['id']);
+
+// query
+$sql = "SELECT A.*, IF(A.discount > 0, (A.price - A.price * (A.discount/100)), null) AS discount_price FROM products AS A WHERE id = $idProduct";
+
+$sqlImages = "SELECT * FROM product_images WHERE product_id = $idProduct";
+
+$sqlFeatured = "SELECT A.id, A.title, A.price, B.image_path, IF(A.discount > 0, (A.price - A.price * (A.discount/100)), null) AS discount_price FROM products AS A INNER JOIN product_images AS B ON B.product_id = A.id WHERE A.id != {$idProduct} GROUP BY A.id ORDER BY RAND() LIMIT 4";
+
+// get product
+$product = $mysql->query($sql);
+
+// if product not found
+if(mysqli_num_rows($product) < 1) header("Location: {$fn->site_url()}");
+
+// get product images
+$productImages = $mysql->query($sqlImages);
+
+// get featured products
+$featuredProducts = $mysql->query($sqlFeatured);
+
+// get data product and images
+$product = $product->fetch_object();
+
 ?>

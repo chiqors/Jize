@@ -18,7 +18,7 @@
 							</div>
 							<?php } ?>
 							<div class="product-thumbnail">
-								<img src="<?= site_url("public/$row->id-$row->title/$row->images_path") ?>" alt="">
+								<img src="<?= site_url($row->image_path) ?>" alt="">
 							</div>
 							<div class="product-content text-center px-3 py-4">
 								<a href="#"><h3><?= $row->title ?></h3></a>
@@ -31,7 +31,7 @@
 									<?php } ?>
 								</div>
 								<div class="button-product mt-3">
-									<a href="<?= site_url("product/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
+									<a href="<?= site_url("products/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
 								</div>
 							</div>
 						</div>

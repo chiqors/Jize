@@ -24,7 +24,7 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
 							<form class="form-search position-relative mr-2" action="<?= site_url("index") ?>" method="GET">
-								<input class="form-control" type="search" placeholder="Search" name="search" aria-label="Search">
+								<input class="form-control" type="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" placeholder="Search" name="search" aria-label="Search">
 							</form>
 						</li>
 						<?php

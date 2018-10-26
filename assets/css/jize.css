@@ -246,6 +246,11 @@ p {
 .product-content-details .product-content {
 	padding: 30px;
 }
+.product-content-details .product-content .product-description {
+	color: #888;
+	font-family: 'Lato', sans-serif;
+	line-height: 24px;
+}
 .product-content-details .product-thumbnail {
 	min-height: 600px;
 	width: 100%;
@@ -299,4 +304,25 @@ p {
 }
 .owl-dots .owl-dot.active {
 	background-color: #3958a8 !important;
+}
+
+/*Cart*/
+.table-cart td, .table-cart th {
+	font-family: 'Lato', sans-serif;
+	font-size: 15px;
+}
+.table-cart th {
+	font-weight: 600;
+	text-align: center;
+}
+
+h3.total-cart {
+	font-size: 15px;
+	margin: 0;
+	vertical-align: middle;
+	margin-top: 10px;
+}
+h3.total-cart span {
+	font-size: 18px;
+	margin-left: 20px;
 }

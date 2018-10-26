@@ -35,6 +35,7 @@
 
 			  return $x_display;
 		}
+
 		return $num;
 	}
 
