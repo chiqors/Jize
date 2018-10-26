@@ -17,6 +17,7 @@
 				<?php
 				$price = 0;
 				$totalPrice = 0;
+				$totalCart = 0;
 
 				if($carts):
 
@@ -27,6 +28,7 @@
 				$total = $price*$qty;
 				$totalPrice = 0;
 				$totalPrice += $total;
+				$totalCart += $totalPrice;
 
 				?>	
 				<tr>
@@ -53,7 +55,7 @@
 				?>
 				<tr>
 					<td colspan="3">
-						<h3 class="total-cart align-middle">Total <span class="text-orange"><?= rupiah($totalPrice) ?></span></h3>
+						<h3 class="total-cart align-middle">Total <span class="text-orange"><?= rupiah($totalCart) ?></span></h3>
 					</td>
 					<td colspan="3" align="right">
 						<button class="btn btn-add-cart" name="update"><i class="fa fa-refresh fa-fw"></i> Update Cart</button>
@@ -70,7 +72,7 @@
 					<tbody>
 						<tr>
 							<th>Cart Subtotal</th>
-							<td><span class="amount"><?= rupiah($totalPrice) ?></span></td>
+							<td><span class="amount"><?= rupiah($totalCart) ?></span></td>
 						</tr>
 						<tr>
 							<th>Shipping and Handling</th>
@@ -78,7 +80,7 @@
 						</tr>
 						<tr>
 							<th>Order Total</th>
-							<td><strong><span class="amount"><?= rupiah($totalPrice) ?></span></strong> </td>
+							<td><strong><span class="amount"><?= rupiah($totalCart) ?></span></strong> </td>
 						</tr>
 					</tbody>
 				</table>
