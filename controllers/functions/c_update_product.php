@@ -15,8 +15,8 @@
     if ($query) {
         $path = "public/images/";
         $gambar = $_FILES['gambar'];
-        
-        if(count($gambar['name']) > 0):
+
+        if($gambar['name'][0] != ""):
 
             $oldImages = $mysql->query("SELECT * FROM product_images WHERE product_id = $id_product");
         
