@@ -31,7 +31,7 @@
 									<?php } ?>
 								</div>
 								<div class="button-product mt-3">
-									<a href="<?= site_url("products/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
+									<a href="<?= site_url("product/detail?id=".$row->id)?>" class="btn btn-warning d-block">Lihat Produk</a>
 								</div>
 							</div>
 						</div>

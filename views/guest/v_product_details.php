@@ -13,23 +13,23 @@
 				</div>
 				<div class="col-md-6">
 					<div class="product-content">
-						<h2 class="title pb-2"><?= $product->title ?></h2>
+						<h2 class="title pb-2"><?= ucfirst($product->title) ?></h2>
 						<div class="price big">
 							<?php if(@$product->discount_price) { ?>
-							<span class="discount text-orange"><del>Rp. <?= currencyShort($product->price) ?></del></span>
-							<span>Rp. <?= currencyShort($product->discount_price) ?></span>
+							<span class="discount text-orange"><del><?= rupiah($product->price) ?></del></span>
+							<span><?= rupiah($product->discount_price) ?></span>
 							<?php } else { ?>
-							<span>Rp. <?= currencyShort($product->price) ?></span>
+							<span><?= rupiah($product->price) ?></span>
 							<?php } ?>
 						</div>
 						<div class="border-bottom my-4"></div>
 						<div class="product-cart">
 							<span class="d-block">Quantity</span>
 							<input type="number" min="1" value="1">
-							<button class="btn btn-add-cart">Add to Cart</button>
+							<a href="<?= site_url("controller/functions/c_add_to_cart.php?id=".$product->id) ?>" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</a>
 						</div>
 						<div class="product-description">
-							<?= $product->description ?>
+							<p><?= $product->description ?></p>
 						</div>
 					</div>
 				</div>

@@ -12,7 +12,7 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_footer.php';
         break;
     // Product details
-    case load_url().'/products/detail':
+    case load_url().'/product/detail':
         include './controllers/c_product_details.php';
         include './views/templates/guest/v_header.php';
         include './views/guest/v_product_details.php';

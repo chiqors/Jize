@@ -32,11 +32,15 @@
 			  $x_display = $x;
 			  $x_display = $x_array[0] . ((int) $x_array[1][0] !== 0 ? '.' . $x_array[1][0] : '');
 			  $x_display .= $x_parts[$x_count_parts - 1];
-
 			  return $x_display;
 		}
-
 		return $num;
+	}
+
+	// Rupiah Format Function
+	function rupiah($angka){
+		$hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+		return $hasil_rupiah;
 	}
 
 	//Call functions
