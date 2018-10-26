@@ -43,6 +43,19 @@
 		return $hasil_rupiah;
 	}
 
+	// Count cart
+	function totalCart()
+	{
+		if(isset($_SESSION['cart'])) {
+			$count = 0;
+			foreach ($_SESSION['cart'] as $key => $value) {
+				$count += $value['quantity'];
+			}
+			return $count;
+		}
+		return 0;
+	}
+
 	//Call functions
 	class Fn
 	{
