@@ -21,7 +21,7 @@
 								<img src="<?= site_url($row->image_path) ?>" alt="">
 							</div>
 							<div class="product-content text-center px-3 py-4">
-								<a href="#"><h3><?= $row->title ?></h3></a>
+								<a href="<?= site_url("product/detail?id=".$row->id)?>"><h3><?= $row->title ?></h3></a>
 								<div class="price">
 									<?php if(@$row->discount_price) { ?>
 									<span class="discount text-orange d-block"><del>Rp. <?= currencyShort($row->price) ?></del></span>

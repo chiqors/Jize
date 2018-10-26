@@ -1,3 +1,3 @@
 <?php
     //title name page
-    $title = "Carts";
+    $title = "Orders";

@@ -5,6 +5,7 @@ switch ($request_uri[0]) {
     // index product page
     case load_url().'':
     case load_url().'/index':
+    case load_url().'/product':
     case load_url().'/':
         include './controllers/c_products.php';
         include './views/templates/guest/v_header.php';
@@ -34,7 +35,7 @@ switch ($request_uri[0]) {
         break;
     // delete product
     case load_url().'/product/delete':
-        include './controllers/c_products.php';
+        include './controllers/functions/c_delete_product.php';
         break;
     // home landing page
     case load_url().'/home':
@@ -67,6 +68,13 @@ switch ($request_uri[0]) {
         include './views/forms/v_register.php';
         include './views/templates/v_footer.php';
         break;
+    // Forget Password page
+    case load_url().'/forget_password':
+        include './controllers/c_forget_password.php';
+		include './views/templates/v_header.php';
+        include './views/forms/v_forget_password.php';
+        include './views/templates/v_footer.php';
+        break;
     // Setting page
     case load_url().'/settings':
         include './controllers/c_settings.php';
@@ -78,19 +86,15 @@ switch ($request_uri[0]) {
     case load_url().'/carts':
         include './controllers/c_carts.php';
         include './views/templates/guest/v_header.php';
-        include './views/v_carts.php';
-        include './views/templates/guest/v_footer.php';
-        break;
-    // Carts page
-    case load_url().'/carts/v_carts.php':
         include './views/guest/v_carts.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // Orders page
     case load_url().'/orders':
         include './controllers/c_orders.php';
-        include './views/templates/v_header.php';
-        include './views/v_orders.php';
-        include './views/templates/v_footer.php';
+        include './views/templates/guest/v_header.php';
+        include './views/guest/v_orders.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // Profile page
     case load_url().'/profile':
