@@ -27,3 +27,10 @@ if(isset($_POST['update'])) {
 		}	
 	}
 }
+
+if(isset($_GET['deleteCart'])) {
+	if(array_key_exists($_GET['deleteCart'], $_SESSION['cart'])) {
+		unset($_SESSION['cart'][$_GET['deleteCart']]);
+	}
+	header("location: {$fn->site_url('/carts')}");
+}

@@ -17,7 +17,7 @@
 				<?php
 				$price = 0;
 				$totalPrice = 0;
-				
+
 				if($carts):
 
 				while ($row = $carts->fetch_object()):
@@ -30,7 +30,7 @@
 
 				?>	
 				<tr>
-					<td class="align-middle"><a href="#" class="btn btn-link"><i class="fa fa-fw fa-close"></i></a></td>
+					<td class="align-middle"><a href="<?= site_url('/carts?deleteCart='.$row->id) ?>" class="btn btn-link"><i class="fa fa-fw fa-close"></i></a></td>
 					<td><img class="thumbnail rounded" src="<?= site_url($row->image_path) ?>" alt="" width="80"></td>
 					<td width="30%" align="center" class="align-middle"><?= $row->title ?></td>
 					<td align="center" class="align-middle"><?= rupiah($price) ?></td>
