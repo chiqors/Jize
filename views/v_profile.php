@@ -40,6 +40,7 @@
                     <td><?php echo $data2['postal_code'] ?></td>
                 </tr>
             </table>
+            <a href="<?= site_url("settings") ?>" class="btn btn-add-cart">Pengaturan</a>
         </div>
      </div>
  </div>
