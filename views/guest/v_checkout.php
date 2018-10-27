@@ -35,7 +35,7 @@
 
 			<div class="col-md-4">
 				<h2>Your Cart</h2>
-				<form target="" method="post">
+				<form action="<?= site_url('controllers/functions/c_do_order.php') ?>" method="post">
 					<ul class="list-group mb-3 z-depth-1">
 						<?php
 
@@ -73,7 +73,7 @@
 					</ul>
 					<ul  class="list-group mb-3 z-depth-1">
 						<div class="input-group">
-							<button class="btn btn-add-cart btn-block">Continue To Cart</button>
+							<button class="btn btn-add-cart btn-block">Continue To Checkout</button>
 						</div>
 					</ul>
 				</form>

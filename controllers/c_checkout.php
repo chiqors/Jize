@@ -7,7 +7,7 @@ if(!isset($_SESSION['cart'])) {
 }
 
 if(is_array($_SESSION['cart'])) {
-	if(count($_SESSION['cart']) <0) {
+	if(count($_SESSION['cart']) < 1) {
 		header("location: {$fn->site_url()}");
 	}
 	$idProduct = array_keys($_SESSION['cart']);

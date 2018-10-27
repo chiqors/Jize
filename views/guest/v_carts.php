@@ -38,7 +38,7 @@
 					<td align="center" class="align-middle"><?= rupiah($price) ?></td>
 					<td width="10%" align="center"  class="align-middle">
 						<div class="nice-number">
-							<input type="number" name="qty[<?= $row->id ?>]" class="form-control" value="<?= $qty ?>">
+							<input type="number" min="0" name="qty[<?= $row->id ?>]" class="form-control" value="<?= $qty ?>">
 						</div>
 					</td>
 					<td align="center"  class="align-middle"><?= rupiah($total) ?></td>

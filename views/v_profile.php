@@ -41,6 +41,7 @@
                 </tr>
             </table>
             <a href="<?= site_url("settings") ?>" class="btn btn-add-cart">Pengaturan</a>
+            <a href="<?= site_url("logout") ?>" class="btn link">Logout</a>
         </div>
      </div>
  </div>
