@@ -96,18 +96,30 @@ switch ($request_uri[0]) {
         include './views/guest/v_checkout.php';
         include './views/templates/guest/v_footer.php';
         break;
-    // Checkout page
+    // Payment proof
     case load_url().'/orders/payment':
         include './controllers/c_payment.php';
         include './views/templates/guest/v_header.php';
         include './views/v_payment_proof.php';
         include './views/templates/guest/v_footer.php';
-            break;
+        break;
+    // Invoice page
+    case load_url().'/invoices':
+        include './controllers/c_invoice.php';
+        include './views/invoices/invoice.php';
+        break;
     // Orders page
     case load_url().'/orders':
         include './controllers/c_orders.php';
         include './views/templates/guest/v_header.php';
         include './views/guest/v_orders.php';
+        include './views/templates/guest/v_footer.php';
+        break;
+    // Orders Detail
+    case load_url().'/orders/detail':
+        include './controllers/c_order_detail.php';
+        include './views/templates/guest/v_header.php';
+        include './views/v_order_detail.php';
         include './views/templates/guest/v_footer.php';
         break;
     // Profile page
