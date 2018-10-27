@@ -59,7 +59,7 @@
 					</td>
 					<td colspan="3" align="right">
 						<button class="btn btn-add-cart" name="update"><i class="fa fa-refresh fa-fw"></i> Update Cart</button>
-						<a href="#" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down fa-fw"></i> Checkout</a>
+						<a href="<?= site_url('checkout') ?>" class="btn btn-add-cart"><i class="fa fa-cart-arrow-down fa-fw"></i> Checkout</a>
 					</td>
 				</tr>
 			</table>

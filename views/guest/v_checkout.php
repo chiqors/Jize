@@ -7,76 +7,77 @@
 				<h1>Checkout</h1>
 			<table class="table table-striped bg-white table-cart">
 				<tr>
-					<td>First Name</td>
-					<td>Last Name</td>
+					<td>Name</td>
+					<td><?= $user->nama ?></td>
 				</tr>
 				<tr>
-					<td colspan="2">Username</td>
+					<td>Username</td>
+					<td><?= $user->username ?></td>
 				</tr>
 				<tr>
-					<td colspan="2">Example.example.com</td>
+					<td>Email</td>
+					<td><?= $user->email ?></td>
 				</tr>
 				<tr>
-					<td colspan="2">Address</td>
+					<td>Address</td>
+					<td><?= $user->address ?></td>
 				</tr>
 				<tr>
-					<td colspan="2">Address 2 (Optional)</td>
+					<td>No Telp</td>
+					<td><?= $user->phone ?></td>
 				</tr>
 				<tr>
-					<td>
-						<select>
-							<option>Choose..</option>
-							<option value="Indonesia">Indonesia</option>
-						</select>
-					</td>
-					<td>
-						<select>
-							<option>Choose..</option>
-							<option value="Indonesia">Bandung</option>
-						</select>
-					</td>
+					<td>Kode POS</td>
+					<td><?= $user->postal_code ?></td>
 				</tr>
-				
 			</table>
 			</div>
+
 			<div class="col-md-4">
 				<h2>Your Cart</h2>
-				<div>
+				<form target="" method="post">
 					<ul class="list-group mb-3 z-depth-1">
+						<?php
+
+						$total = 0;
+						while ($row = $carts->fetch_object()):
+
+						$quantity = $_SESSION['cart'][$row->id]['quantity'];
+						$totalItemPrice = ($row->discount_price) ? $row->discount_price : $row->price;
+						$totalItemPrice *= $quantity;
+						$total += $totalItemPrice;
+
+						?>
 						<li class="list-group-item d-flex justify-content-between lh-condensed">
 							<div>
-								<h6 class="my-0">Product Name</h6>
-								<small class="text-muted">Brief Description</small>
-							</div>						
-							<span class="text-muted">Rp. 300rb</span>
+								<h6 class="my-0"><?= $row->title ?></h6>
+								<small class="text-muted">X <?= $quantity ?></small>
+							</div>
+							<span class="text-muted">Rp. <?= currencyShort($totalItemPrice) ?></span>
 						</li>
-						<li class="list-group-item d-flex justify-content-between lh-condensed">
-							<div>
-								<h6 class="my-0">Second Name</h6>
-								<small class="text-muted">Brief Description</small>
-							</div>							
-							<span class="text-muted">Rp. 300rb</span>
-						</li>
-						<li class="list-group-item d-flex justify-content-between lh-condensed">
-							<div>
-								<h6 class="my-0">Thrid Item</h6>
-								<small class="text-muted">Brief Description</small>
-							</div>							
-							<span class="text-muted">Rp. 300rb</span>
-						</li>
+						<?php endwhile; ?>
 						<li class="list-group-item d-flex justify-content-between">
 							<h6 class="my-0">Total</h6>
-							<strong>Rp. 900r</strong>
+							<strong>Rp. <?= currencyShort($total) ?></strong>
+						</li>
+						<li class="list-group-item">
+							<h6 class="">Payment Method</h6>
+							<div class="form-group">
+								<select name="payment_method" class="form-control">
+									<option selected>Pilih</option>
+									<option value="bank">Bank Transfer</option>
+									<option value="cc">Credit Card</option>
+								</select>
+							</div>
 						</li>
 					</ul>
 					<ul  class="list-group mb-3 z-depth-1">
 						<div class="input-group">
-							<input type="button" class="btn-block" value="Continue To Checkout"style="background-color: #3958a8;color: #fff;padding: 11px 35px;">
+							<button class="btn btn-add-cart btn-block">Continue To Cart</button>
 						</div>
 					</ul>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
-				
