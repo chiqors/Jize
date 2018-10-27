@@ -22,6 +22,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $orderItem = $mysql->query("INSERT INTO order_items VALUES (NULL, $idOrder, $product->id, 'product', $price, $product->discount, $totalPrice)");
         unset($_SESSION['cart'][$key]);
-        
+
     }
 }
