@@ -35,6 +35,11 @@
 						</td>
 					</tr>
 					<?php endwhile; ?>
+					<?php if (mysqli_num_rows($orders) < 1): ?>
+					<tr>
+						<td align="center" colspan="6">Belum ada order.</td>
+					</tr>
+					<?php endif; ?>
 				</tbody>
 			</table>
 		</div>

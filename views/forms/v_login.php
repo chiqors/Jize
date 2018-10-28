@@ -28,8 +28,9 @@
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="password" required>
-            
+
             <button type="submit">Login</button>
+            <a href="<?= site_url('register') ?>">Daftar</a>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">

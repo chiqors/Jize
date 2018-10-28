@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date_exp = date("Y-m-d H:i:s", strtotime("+3 Days"));
     $paymentMethod = $_POST['payment_method'];
 
-    $order = $mysql->query("INSERT INTO orders VALUES (NULL, $idUser, '$date', '$date_exp', NULL, '$paymentMethod',
+    $order = $mysql->query("INSERT INTO orders VALUES (NULL, $idUser, '$date', '$date_exp', NULL, '$paymentMethod','',
          'unpaid')");
 
     $idOrder = $mysql->insert_id;

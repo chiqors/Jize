@@ -9,6 +9,11 @@ if($id == "") {
 }
 
 $invoice = $mysql->query("SELECT * FROM orders WHERE user_id = ".$_SESSION['id_user']." AND id = $id");
+
+if(mysqli_num_rows($invoice) < 1) {
+    header("location: ".site_url('orders'));
+}
+
 $invoice = $invoice->fetch_object();
 
 $user = $mysql->query("SELECT A.*, B.address, B.postal_code, B.phone FROM users AS A LEFT JOIN user_details AS B ON B.user_id = A.id WHERE A.id = $invoice->user_id");

@@ -12,7 +12,7 @@ if($id == "") {
 $hscripts ='<link rel="stylesheet" href="'.site_url('/assets/plugins/fancybox/jquery.fancybox.min.css').'">';
 $fscripts = '<script src="'.site_url('/assets/plugins/fancybox/jquery.fancybox.min.js').'"></script><script>$(\'[data-fancybox]\').fancybox();</script>';
 
-$order = $mysql->query("SELECT * FROM orders WHERE (id = $id AND user_id = ".$_SESSION['id_user']." AND status = 'unpaid' OR status = 'verification')");
+$order = $mysql->query("SELECT * FROM orders WHERE (id = $id AND user_id = ".$_SESSION['id_user'].") AND (status = 'unpaid' OR status = 'verification')");
 
 if(mysqli_num_rows($order) < 1) {
     header("Location: ".site_url('orders'));

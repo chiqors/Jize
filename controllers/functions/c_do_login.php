@@ -7,12 +7,12 @@ include '../../configs/libraries.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    
+
     //Password PHP/SQL
     /*  in SQL = SHA1('$password')
-        in PHP = SHA1['password'];    
+        in PHP = SHA1['password'];
     */
-    
+
     $sql = "SELECT * FROM users
             WHERE username = '$username'
             AND password = '$password'";
