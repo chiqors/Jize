@@ -134,6 +134,7 @@ switch ($request_uri[0]) {
     case load_url().'/dashboard':
         include './controllers/c_dashboard.php';
         include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
         include './views/admin/v_dashboard.php';
         include './views/templates/admin/v_footer.php';
         break;
