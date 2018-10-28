@@ -20,7 +20,7 @@
     <table>
         <tr>
             <td>Username</td>
-            <td><input type="text" name = "username" placeholder = "Masukkan Username Anda..." required></td>
+            <td><input type="text" name = "user" placeholder = "Masukkan Username Anda..." required></td>
         </tr>
         <tr>
             <td>Email</td>
@@ -43,7 +43,7 @@
             <td><input type="Password" name = "kpassword" placeholder = "Konfirmasi Password" required></td>
         </tr>
         <tr>
-            <td><input type="submit"></td>
+            <td><input type="submit" name = "submitkpsw"></td>
         </tr>
     </table>
 </form>

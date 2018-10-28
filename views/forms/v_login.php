@@ -22,7 +22,8 @@
                         ?>
                     </div>
                     <?php } ?>
-                    <?php if(isset($_SESSION['fpassword_message'] )) { ?>
+                    <?php  unset($_SESSION['change_password']); 
+                        if(isset($_SESSION['fpassword_message'] )) { ?>
                     <div class="alert alert-warning">
                         <?php
                             echo $_SESSION['fpassword_message'];
