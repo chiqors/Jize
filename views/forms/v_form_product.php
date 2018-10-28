@@ -1,6 +1,14 @@
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Product</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
             <h3><?= $form ?></h3>
         </div>
         <div class="row justify-content-md-center">

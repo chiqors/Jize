@@ -1,6 +1,13 @@
 <div class="content-wrapper mb-5">
 	<div class="container">
 		<div class="row">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
+					<li class="breadcrumb-item"><a href="<?= site_url("carts") ?>">Carts</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Checkout</li>
+				</ol>
+			</nav>
 		</div>
 		<div class="row">
 			<div class="col-md-8">

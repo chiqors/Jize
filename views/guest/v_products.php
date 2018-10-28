@@ -1,5 +1,12 @@
 <div class="content-wrapper">
 	<div class="container">
+		<div class="row">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
+				</ol>
+			</nav>
+		</div>
 		<?php if(!empty($_SESSION['createproduct_msg']) || !empty($_SESSION['updateproduct_msg']) || !empty($_SESSION['deleteproduct_msg'])) { ?>
 		<div class="row">
 			<div class="col-md-12">
