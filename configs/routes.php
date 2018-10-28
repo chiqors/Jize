@@ -54,9 +54,9 @@ switch ($request_uri[0]) {
     // Login page
     case load_url().'/login':
         include './controllers/c_login.php';
-		include './views/templates/v_header.php';
+		include './views/templates/guest/v_header.php';
         include './views/forms/v_login.php';
-		include './views/templates/v_footer.php';
+		include './views/templates/guest/v_footer.php';
         break;
     case load_url().'/logout':
         include './controllers/c_logout.php';
@@ -64,9 +64,9 @@ switch ($request_uri[0]) {
      // Register page
     case load_url().'/register':
         include './controllers/c_register.php';
-        include './views/templates/v_header.php';
+        include './views/templates/guest/v_header.php';
         include './views/forms/v_register.php';
-        include './views/templates/v_footer.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // Forget Password page
     case load_url().'/forget_password':
