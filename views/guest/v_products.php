@@ -92,6 +92,9 @@
 					<div class="sidebar-body">
 						<ul>
 							<li class="header"><strong>NAVIGATION</strong></li>
+							<?php if(@$_SESSION['role'] == "admin") { ?>
+							<li><a href="<?= site_url("dashboard") ?>">Admin</a></li>
+							<?php } ?>
 							<li><a href="<?= site_url("profile") ?>">Profile</a></li>
 							<li><a href="<?= site_url("orders") ?>">Orders</a></li>
 							<li><a href="<?= site_url("settings") ?>">Settings</a></li>
