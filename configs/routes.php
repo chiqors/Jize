@@ -132,6 +132,7 @@ switch ($request_uri[0]) {
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');
+		$title = "404 Not Found";
 		include './views/templates/guest/v_header.php';
         include './views/v_404.php';
 		include './views/templates/guest/v_footer.php';
