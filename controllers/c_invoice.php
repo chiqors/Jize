@@ -1,5 +1,7 @@
 <?php
 
+is_logedin();
+
 $id = $_GET['id'];
 
 if($id == "") {

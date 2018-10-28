@@ -1,4 +1,7 @@
 <?php
+
+is_logedin();
+
 //title name page
 $title = "Order Detail";
 $id = $_GET['id'];

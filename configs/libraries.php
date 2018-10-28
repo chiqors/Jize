@@ -11,6 +11,14 @@
 	function load_url() {
         return "/ecommerce";
     }
+
+	//auth check
+	function is_logedin() {
+		if(!isset($_SESSION['id_user'])) {
+			header("Location: ".site_url('/login'));
+		}	
+	}
+
 	//Load Page Function
 	function site_url($path = '') {
 		if(is_array($path)) {

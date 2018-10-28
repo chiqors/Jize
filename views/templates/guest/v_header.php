@@ -27,10 +27,11 @@
 								<input class="form-control" type="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" placeholder="Search" name="search" aria-label="Search">
 							</form>
 						</li>
-						<?php if(@$_SESSION['loggedin']) { ?>
 						<li class="nav-item">
 							<a class="nav-link nav-cart no-bg" href="<?= site_url("carts") ?>"><i class="fa fa-shopping-bag"></i> Carts <span class="total-cart"><?= totalCart() ?></span></a>
 						</li>
+						<?php if(@$_SESSION['loggedin']) { ?>
+
 						<li class="nav-item">
 							<a class="nav-link" href="<?= site_url("profile")?>"><i class="fa fa-user"></i> My Account</a>
 						</li>

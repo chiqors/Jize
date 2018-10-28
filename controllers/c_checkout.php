@@ -2,6 +2,8 @@
 //title name page
 $title = "Checkout";
 
+is_logedin();
+
 if(!isset($_SESSION['cart'])) {
 	header("location: {$fn->site_url()}");
 }

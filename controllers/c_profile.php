@@ -1,4 +1,5 @@
 <?php
+is_logedin();
 $title = "Profile";
     $user=$_SESSION['username'];
     $id=$_SESSION['id_user'];

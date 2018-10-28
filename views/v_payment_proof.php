@@ -6,7 +6,7 @@
                <input type="hidden" name="order_id" value="<?= $order->id ?>">
            <table class="table table-striped">
                <tr>
-               <td>Order ID</td>
+               <td width="300">Order ID</td>
                <td>#<?php echo $order->id ?></td>
                </tr>
                <tr>
@@ -22,8 +22,12 @@
                    <td><?php echo $order->payment_method ?></td>
                </tr>
                <tr>
-                   <td><input type="file" name="payment_proof" class="w-100"></td>
-                   <td><button class="btn btn-add-cart">Unggah</button></td>
+                   <td>Cara Pembayaran</td>
+                   <td>Silahkan transfer pembayaran ke rekening Jize. <br><strong>BCA</strong><br>9962387375<br><strong>JIZE</strong><br>Jika sudah melakukan pembayaran, silahkan unggah bukti pembayaran di form di bawah ini.</td>
+               </tr>
+               <tr>
+                   <td>Unggah Bukti Pembayaran</td>
+                   <td><input type="file" name="payment_proof"><button class="btn btn-add-cart">Unggah</button></td>
                </tr>
                <?php if ($order->payment_proof): ?>
                <tr>

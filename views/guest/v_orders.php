@@ -25,12 +25,12 @@
 						<td align="center" class="align-middle"><?= $row->status ?></td>
 						<td class="align-middle">
 							<a href="<?= site_url('/orders/detail?id='.$row->id) ?>" class="btn btn-primary btn-sm">Detail</a>
-							<?php if (!$row->is_expired): ?>
+							<?php if (!$row->is_expired && ($row->status == 'unpaid' || $row->status == 'verification')): ?>
 								<a href="<?= site_url('/orders/payment?id='.$row->id) ?>" class="btn btn-success btn-sm">Bayar</a>
 							<?php endif;
 							if($row->status == "sending"):
 							?>
-								<a href="<?= site_url('/orders?received='.$row->id) ?>" class="btn btn-warning btn-sm">Terima Barang</a>
+								<a href="<?= site_url('/orders?received='.$row->id) ?>" class="btn btn-info btn-sm">Terima Barang</a>
 							<?php endif; ?>
 						</td>
 					</tr>

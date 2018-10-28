@@ -24,6 +24,8 @@
 						</div>
 						<div class="border-bottom my-4"></div>
 						<?php if(@$_SESSION['loggedin']) { ?>
+
+						<?php } ?>
 						<div class="product-cart">
 							<form action="<?= $url ?>">
 							<span class="d-block">Quantity</span>
@@ -32,7 +34,6 @@
 							<button class="btn btn-add-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add to Cart</button>
 							</form>
 						</div>
-						<?php } ?>
 						<div class="product-description">
 							<p><?= $product->description ?></p>
 						</div>
