@@ -26,12 +26,30 @@
 </head>
 
 <body>
-    <header>
-        <!-- Navigation -->
-        <nav class="navbar navbar-light bg-light fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
-                <a class="btn btn-primary" href="#">Sign In</a>
-            </div>
-        </nav>
-    </header>
+    <nav id="navbar" class="navbar fixed-top no-bg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="<?= site_url('/assets/img/logo.svg') ?>" width="50px" alt="">
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#fat">TOP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mdo">HIGHLIGHTED</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mdo">SUBSCRIBE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mdo">REVIEW</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mdo">BUY NOW</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#mdo">AUTHOR</a>
+                </li>
+            </ul>
+        </div>
+    </nav>

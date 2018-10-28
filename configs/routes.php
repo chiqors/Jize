@@ -38,6 +38,7 @@ switch ($request_uri[0]) {
         include './controllers/functions/c_delete_product.php';
         break;
     // home landing page
+    case load_url().'/landing':
     case load_url().'/home':
         include './controllers/c_index.php';
         include './views/templates/v_header.php';
@@ -128,6 +129,13 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_header.php';
         include './views/v_profile.php';
         include './views/templates/guest/v_footer.php';
+        break;
+    // Dashboard page
+    case load_url().'/dashboard':
+        include './controllers/c_dashboard.php';
+        include './views/templates/admin/v_header.php';
+        include './views/admin/v_dashboard.php';
+        include './views/templates/admin/v_footer.php';
         break;
     // Everything else
     default:
