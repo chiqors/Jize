@@ -72,9 +72,9 @@ switch ($request_uri[0]) {
     // Forget Password page
     case load_url().'/forget_password':
         include './controllers/c_forget_password.php';
-		include './views/templates/v_header.php';
+		include './views/templates/guest/v_header.php';
         include './views/forms/v_forget_password.php';
-        include './views/templates/v_footer.php';
+        include './views/templates/guest/v_footer.php';
         break;
     // Setting page
     case load_url().'/settings':
