@@ -41,7 +41,7 @@ switch ($request_uri[0]) {
     case load_url().'/home':
         include './controllers/c_index.php';
         include './views/templates/v_header.php';
-        include './views/guest/v_index.php';
+        include './views/v_index.php';
         include './views/templates/v_footer.php';
         break;
     // About page

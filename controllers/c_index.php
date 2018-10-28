@@ -1,3 +1,3 @@
 <?php
     //title name page
-    $title = "Home";
+    $title = "Merchandise Self Store";
