@@ -17,6 +17,7 @@
 
   <!-- Custom styles for this template -->
   <link href="<?= site_url('/assets/css/dashboard.css') ?>" rel="stylesheet">
+  <?= isset($hscripts) ? $hscripts : '' ?>
 </head>
 
 <body>

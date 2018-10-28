@@ -6,6 +6,7 @@
 <script src="<?= site_url('assets/js/jquery.min.js') ?>"></script>
 <script src="<?= site_url('assets/js/popper.min.js') ?>"></script>
 <script src="<?= site_url('assets/js/bootstrap.min.js') ?>"></script>
+<?= isset($fscripts) ? $fscripts : '' ?>
 
 <!-- Icons -->
 <script src="<?= site_url('assets/js/feather.min.js') ?>"></script>
