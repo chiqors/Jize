@@ -145,6 +145,41 @@ switch ($request_uri[0]) {
         include './views/admin/v_dashboard.php';
         include './views/templates/admin/v_footer.php';
         break;
+    case load_url().'/dashboard/orders':
+        include './controllers/c_admin_orders.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_orders.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    case load_url().'/dashboard/products':
+        include './controllers/c_admin_products.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_products.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    case load_url().'/dashboard/customers':
+        include './controllers/c_admin_customers.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_customers.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    case load_url().'/dashboard/reports':
+        include './controllers/c_admin_reports.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_reports.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    case load_url().'/dashboard/integrations':
+        include './controllers/c_admin_integrations.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_integrations.php';
+        include './views/templates/admin/v_footer.php';
+        break;
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');

@@ -16,31 +16,31 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= site_url('dashboard/orders') ?>">
                             <span data-feather="file"></span>
                             Orders
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= site_url('dashboard/products') ?>">
                             <span data-feather="shopping-cart"></span>
                             Products
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= site_url('dashboard/customers') ?>">
                             <span data-feather="users"></span>
                             Customers
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= site_url('dashboard/reports') ?>">
                             <span data-feather="bar-chart-2"></span>
                             Reports
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="<?= site_url('dashboard/integrations') ?>">
                             <span data-feather="layers"></span>
                             Integrations
                         </a>
