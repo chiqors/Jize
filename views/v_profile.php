@@ -1,13 +1,11 @@
  <div class="content-wrapper mb-5">
      <div class="container">
-        <div class="row">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
-                </ol>
-            </nav>
-        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profile</li>
+            </ol>
+        </nav>
         <div class="product-content-details p-5">
             <h3>Profile</h3>
             <table class="table table-striped">

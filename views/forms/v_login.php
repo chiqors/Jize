@@ -22,7 +22,7 @@
                         ?>
                     </div>
                     <?php } ?>
-                    <?php  unset($_SESSION['change_password']); 
+                    <?php  unset($_SESSION['change_password']);
                         if(isset($_SESSION['fpassword_message'] )) { ?>
                     <div class="alert alert-warning">
                         <?php
@@ -30,7 +30,6 @@
                             unset($_SESSION['fpassword_message']);
                         ?>
                     </div>
-                    <br><br>
                     <?php } ?>
                     <button type="submit" class="btn btn-add-cart btn-block">Login</button>
                     <a href="<?= site_url('register') ?>" class="btn btn-link btn-block">Belum punya akun?</a>
