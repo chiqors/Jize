@@ -13,6 +13,22 @@
      font-weight: 700;
  }
 
+.no-bg {
+    background: rgba(50, 94, 169, 0.75);
+ }
+
+.no-bg a {
+    color: #fff;
+}
+
+.no-bg a:hover {
+    transition: all .0,5ms ease-in-out;
+}
+
+header.masthead .image {
+    width: 100%;
+}
+
  header.masthead {
      position: relative;
      background-color: #343a40;
@@ -37,12 +53,12 @@
 
  @media (min-width: 768px) {
      header.masthead {
-         padding-top: 12rem;
-         padding-bottom: 12rem;
+         padding-top: 0;
+         padding-bottom: 0;
      }
 
      header.masthead h1 {
-         font-size: 3rem;
+         font-size: 25px;
      }
  }
 
