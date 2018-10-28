@@ -7,12 +7,10 @@
     $username=$_POST['user'];
     $email=$_POST['email'];
 
-    $users="SELECT * FROM users WHERE 
-            email = '$email' AND 
-            username = '$username'";
+    $users="SELECT * FROM users WHERE email = '$email' AND username = '$username'";
     $query=mysqli_query($mysql,$users);
     $userspsw="UPDATE users SET password = '$password'";
-    if ($query) {
+    if (mysqli_num_rows($query)>0) {
         $_SESSION['change_password'] = true;
         header('Location:'. site_url("forget_password"));
     }else {
