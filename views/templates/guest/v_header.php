@@ -17,12 +17,15 @@
 				<a class="navbar-brand" href="<?= site_url("") ?>">
 					<img src="<?= site_url('/assets/img/logo.svg') ?>">
 				</a>
+				<form class="form-search position-relative mr-2 mobile-search" action="<?= site_url("index") ?>" method="GET">
+					<input class="form-control" type="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" placeholder="Search" name="search" aria-label="Search">
+				</form>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+					<i class="fa fa-bars"></i>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
+						<li class="nav-item desktop-search">
 							<form class="form-search position-relative mr-2" action="<?= site_url("index") ?>" method="GET">
 								<input class="form-control" type="search" value="<?= isset($_GET['search']) ? $_GET['search'] : '' ?>" placeholder="Search" name="search" aria-label="Search">
 							</form>

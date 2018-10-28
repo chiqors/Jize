@@ -95,6 +95,9 @@ p {
 	top: 6px;
 	left: 15px;
 }
+.mobile-search {
+	display: none !important;
+}
 .navbar-jize .navbar-nav .nav-link.no-bg {
 	background-color: transparent;
 	color: #888;
@@ -331,4 +334,13 @@ h3.total-cart {
 h3.total-cart span {
 	font-size: 18px;
 	margin-left: 20px;
+}
+
+@media screen and (max-width: 920px) {
+	.mobile-search {
+		display: block !important;
+	}
+	.desktop-search {
+		display: none;
+	}
 }
