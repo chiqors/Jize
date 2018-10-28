@@ -6,6 +6,8 @@ switch ($request_uri[0]) {
     case load_url().'':
     case load_url().'/index':
     case load_url().'/product':
+        header('location:'.site_url(''));
+        break;
     case load_url().'/':
         include './controllers/c_products.php';
         include './views/templates/guest/v_header.php';
@@ -39,6 +41,8 @@ switch ($request_uri[0]) {
         break;
     // home landing page
     case load_url().'/landing':
+        header('location:'.site_url('home'));
+        break;
     case load_url().'/home':
         include './controllers/c_index.php';
         include './views/templates/v_header.php';
@@ -131,6 +135,9 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_footer.php';
         break;
     // Dashboard page
+    case load_url().'/admin':
+        header('location:'.site_url('dashboard'));
+        break;
     case load_url().'/dashboard':
         include './controllers/c_dashboard.php';
         include './views/templates/admin/v_header.php';
