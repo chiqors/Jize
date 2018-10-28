@@ -132,8 +132,8 @@ switch ($request_uri[0]) {
     // Everything else
     default:
         header('HTTP/1.0 404 Not Found');
-		include './views/templates/v_header.php';
+		include './views/templates/guest/v_header.php';
         include './views/v_404.php';
-		include './views/templates/v_footer.php';
+		include './views/templates/guest/v_footer.php';
         break;
 }

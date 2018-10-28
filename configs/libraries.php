@@ -16,7 +16,7 @@
 	function is_logedin() {
 		if(!isset($_SESSION['id_user'])) {
 			header("Location: ".site_url('/login'));
-		}	
+		}
 	}
 
 	//Load Page Function
@@ -79,6 +79,11 @@
 			return $count;
 		}
 		return 0;
+	}
+
+	//initialize cart
+	if(!isset($_SESSION['cart'])) {
+		$_SESSION['cart'] = array();
 	}
 
 	//Call functions
