@@ -2,6 +2,7 @@
 
 is_logedin();
 
+$title = "Invoice";
 $id = $_GET['id'];
 
 if($id == "") {

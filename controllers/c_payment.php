@@ -25,7 +25,12 @@ if(isset($_FILES['payment_proof'])) {
     $file = $_FILES['payment_proof'];
 
     if(!getimagesize($file['tmp_name'])) {
-        header("location: ".site_url('/orders/payment?id='.$order->id));
+        header("location: ".site_url('/order/payment?id='.$order->id));
+    }
+
+    //create directory if not exist
+    if(!file_exists($path)) {
+        mkdir($path, 0777, true);
     }
 
     $pathInfo = pathinfo($file['name']);
@@ -38,7 +43,7 @@ if(isset($_FILES['payment_proof'])) {
 
         $mysql->query("UPDATE orders SET payment_proof = '$fileName', status = 'verification' WHERE id = $order->id AND user_id = ".$_SESSION['id_user']);
 
-        header("location: ".site_url('/orders/payment?id='.$order->id));
+        header("location: ".site_url('/order/payment?id='.$order->id));
     }
 }
 

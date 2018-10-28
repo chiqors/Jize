@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2018 at 09:10 AM
+-- Generation Time: Oct 28, 2018 at 04:51 PM
 -- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- PHP Version: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,6 +34,8 @@ CREATE TABLE `orders` (
   `order_date` datetime NOT NULL,
   `order_expire` datetime NOT NULL,
   `tracking_number` varchar(250) DEFAULT NULL,
+  `payment_method` enum('bank','cc') DEFAULT NULL,
+  `payment_proof` varchar(250) DEFAULT NULL,
   `status` enum('unpaid','paid','verification','sending','sent') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -108,6 +110,14 @@ CREATE TABLE `users` (
   `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `nama`, `email`, `username`, `password`, `role`) VALUES
+(1, 'chiqo', 'fathoni105@gmail.com', 'chiqo', 'chiqo', 'admin'),
+(2, 'han', 'han.stiefel@gmail.com', 'han', 'han', 'guest');
+
 -- --------------------------------------------------------
 
 --
@@ -121,6 +131,14 @@ CREATE TABLE `user_details` (
   `phone` varchar(30) NOT NULL,
   `postal_code` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_details`
+--
+
+INSERT INTO `user_details` (`id`, `user_id`, `address`, `phone`, `postal_code`) VALUES
+(1, 1, 'Jl. Berlian no 6', '081223939528', '40263'),
+(2, 2, 'afasf', '5324234234', '34234');
 
 --
 -- Indexes for dumped tables
@@ -180,25 +198,25 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -210,13 +228,13 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_details`
 --
 ALTER TABLE `user_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

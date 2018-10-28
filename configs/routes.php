@@ -101,13 +101,6 @@ switch ($request_uri[0]) {
         include './views/guest/v_checkout.php';
         include './views/templates/guest/v_footer.php';
         break;
-    // Payment proof
-    case load_url().'/orders/payment':
-        include './controllers/c_payment.php';
-        include './views/templates/guest/v_header.php';
-        include './views/v_payment_proof.php';
-        include './views/templates/guest/v_footer.php';
-        break;
     // Invoice page
     case load_url().'/invoices':
         include './controllers/c_invoice.php';
@@ -121,10 +114,17 @@ switch ($request_uri[0]) {
         include './views/templates/guest/v_footer.php';
         break;
     // Orders Detail
-    case load_url().'/orders/detail':
+    case load_url().'/order/detail':
         include './controllers/c_order_detail.php';
         include './views/templates/guest/v_header.php';
         include './views/v_order_detail.php';
+        include './views/templates/guest/v_footer.php';
+        break;
+    // Payment proof
+    case load_url().'/order/payment':
+        include './controllers/c_payment.php';
+        include './views/templates/guest/v_header.php';
+        include './views/v_payment_proof.php';
         include './views/templates/guest/v_footer.php';
         break;
     // Profile page
@@ -145,6 +145,7 @@ switch ($request_uri[0]) {
         include './views/admin/v_dashboard.php';
         include './views/templates/admin/v_footer.php';
         break;
+    // Admin Order page
     case load_url().'/dashboard/orders':
         include './controllers/c_admin_orders.php';
         include './views/templates/admin/v_header.php';
@@ -152,6 +153,23 @@ switch ($request_uri[0]) {
         include './views/admin/v_orders.php';
         include './views/templates/admin/v_footer.php';
         break;
+    // Admin Order details page
+    case load_url().'/dashboard/order/detail':
+        include './controllers/c_admin_order_detail.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_order_detail.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    // Admin Payment proof page
+    case load_url().'/dashboard/order/payment':
+        include './controllers/c_admin_payment.php';
+        include './views/templates/admin/v_header.php';
+        include './views/templates/admin/v_sidebar.php';
+        include './views/admin/v_payment_proof.php';
+        include './views/templates/admin/v_footer.php';
+        break;
+    // Admin Products page
     case load_url().'/dashboard/products':
         include './controllers/c_admin_products.php';
         include './views/templates/admin/v_header.php';
@@ -159,6 +177,7 @@ switch ($request_uri[0]) {
         include './views/admin/v_products.php';
         include './views/templates/admin/v_footer.php';
         break;
+    // Admin Customers/Users page
     case load_url().'/dashboard/customers':
         include './controllers/c_admin_customers.php';
         include './views/templates/admin/v_header.php';
@@ -166,6 +185,7 @@ switch ($request_uri[0]) {
         include './views/admin/v_customers.php';
         include './views/templates/admin/v_footer.php';
         break;
+    // Admin Reports page
     case load_url().'/dashboard/reports':
         include './controllers/c_admin_reports.php';
         include './views/templates/admin/v_header.php';
@@ -173,6 +193,7 @@ switch ($request_uri[0]) {
         include './views/admin/v_reports.php';
         include './views/templates/admin/v_footer.php';
         break;
+    // Admin Integrations page
     case load_url().'/dashboard/integrations':
         include './controllers/c_admin_integrations.php';
         include './views/templates/admin/v_header.php';

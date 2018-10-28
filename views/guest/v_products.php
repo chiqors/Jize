@@ -5,7 +5,7 @@
 				<li class="breadcrumb-item"><a href="<?= site_url("") ?>">Home</a></li>
 			</ol>
 		</nav>
-		<?php if(!empty($_SESSION['createproduct_msg']) || !empty($_SESSION['updateproduct_msg']) || !empty($_SESSION['deleteproduct_msg'])) { ?>
+		<?php if(!empty($_SESSION['createproduct_msg']) || !empty($_SESSION['updateproduct_msg']) || !empty($_SESSION['deleteproduct_msg']) || !empty($_SESSION['order_msg'])) { ?>
 		<div class="row">
 			<div class="col-md-12">
               	<div class="alert alert-info">
@@ -13,10 +13,12 @@
 						echo @$_SESSION['createproduct_msg'];
 						echo @$_SESSION['updateproduct_msg'];
 						echo @$_SESSION['deleteproduct_msg'];
+						echo @$_SESSION['order_msg'];
 
 						unset($_SESSION['createproduct_msg']);
 						unset($_SESSION['updateproduct_msg']);
 						unset($_SESSION['deleteproduct_msg']);
+						unset($_SESSION['order_msg']);
 					?>
               	</div>
 			</div>

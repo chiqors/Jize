@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Invoices Template</title>
+    <title>Jize - <?= $title ?></title>
 
     <style>
     .invoice-box {

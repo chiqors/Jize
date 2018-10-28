@@ -30,9 +30,9 @@
 						<td align="center" class="align-middle"><?= $row->order_expire ?></td>
 						<td align="center" class="align-middle"><?= $row->status ?></td>
 						<td class="align-middle">
-							<a href="<?= site_url('/orders/detail?id='.$row->id) ?>" class="btn btn-primary btn-sm">Detail</a>
+							<a href="<?= site_url('/order/detail?id='.$row->id) ?>" class="btn btn-primary btn-sm">Detail</a>
 							<?php if (!$row->is_expired && ($row->status == 'unpaid' || $row->status == 'verification')): ?>
-								<a href="<?= site_url('/orders/payment?id='.$row->id) ?>" class="btn btn-success btn-sm">Bayar</a>
+								<a href="<?= site_url('/order/payment?id='.$row->id) ?>" class="btn btn-success btn-sm">Bayar</a>
 							<?php endif;
 							if($row->status == "sending"):
 							?>
