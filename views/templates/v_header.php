@@ -33,22 +33,13 @@
             </a>
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="#fat">TOP</a>
+                    <a class="nav-link" href="<?= site_url('/home') ?>">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#mdo">HIGHLIGHTED</a>
+                    <a class="nav-link" href="<?= site_url('/home#features') ?>">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#mdo">SUBSCRIBE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mdo">REVIEW</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mdo">BUY NOW</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mdo">AUTHOR</a>
+                    <a class="nav-link" href="<?= site_url('/') ?>">Products</a>
                 </li>
             </ul>
         </div>

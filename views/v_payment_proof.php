@@ -2,7 +2,7 @@
     <div class="container">
        <div class="product-content-details p-5">
            <h3>Unggah Bukti Pembayaran</h3>
-           <form action="<?= site_url('orders/payment?id='.$order->id) ?>" method="post" enctype="multipart/form-data">
+           <form action="<?= site_url('order/payment?id='.$order->id) ?>" method="post" enctype="multipart/form-data">
                <input type="hidden" name="order_id" value="<?= $order->id ?>">
            <table class="table table-striped">
                <tr>
