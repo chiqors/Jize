@@ -87,7 +87,7 @@
 							<div class="media-body">
 								<h4><?= $_SESSION['nama'] ?></h4>
 								<span class="d-block">Total Orders</span>
-								<strong><span class="text-orange"><?= totalCart() ?></span></strong>
+								<strong><span class="text-orange"><?= totalOrders() ?></span></strong>
 							</div>
 						</div>
 					</div>

@@ -81,6 +81,16 @@
 		return 0;
 	}
 
+	function totalOrders()
+	{
+		global $mysql;
+		if(isset($_SESSION['id_user'])) {
+			$orders = $mysql->query("SELECT id FROM orders WHERE user_id = ".$_SESSION['id_user']);
+			return mysqli_num_rows($orders);
+		}
+		return 0;
+	}
+
 	//initialize cart
 	if(!isset($_SESSION['cart'])) {
 		$_SESSION['cart'] = array();

@@ -35,6 +35,10 @@
                         <td><a href="<?= site_url('public/payment_proof/'.$order->payment_proof) ?>" data-fancybox>Lihat Bukti Pembayaran</a></td>
                     </tr>
                     <?php endif; ?>
+                    <tr>
+                        <td>Tracking Number</td>
+                        <td><input type="text" name="tracking_number" class="form-control"></td>
+                    </tr>
                 </table>
                 <a href="<?= site_url('dashboard/orders') ?>" class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Kembali</a>
                 <button type="submit" name="toverify" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Verify</button>

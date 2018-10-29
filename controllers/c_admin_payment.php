@@ -21,7 +21,8 @@ if(mysqli_num_rows($order) < 1) {
 $order = $order->fetch_object();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $mysql->query("UPDATE orders SET status = 'sending' WHERE id = $order->id");
+    $trackingNumber = mysqli_real_escape_string($mysql, $_POST['tracking_number']);
+    $mysql->query("UPDATE orders SET status = 'sending', tracking_number = '$trackingNumber' WHERE id = $order->id");
     $_SESSION['order_msg'] = "Order (#$order->id) is sucessfully changed status to sending";
     header("location: ".site_url('dashboard/order/detail?id='.$order->id));
 }
