@@ -179,6 +179,16 @@
                 </td>
             </tr>
         </table>
+        <div align="center" style="margin: 20px 0; background: #eee; padding: 8px;">
+            <a href="" onclick="window.print()" class="print">(Print)</a>
+            <style type="text/css">
+                @media print{ 
+                    .print{
+                        display: none;
+                    }
+                }
+            </style>
+        </div>
     </div>
 </body>
 </html>
