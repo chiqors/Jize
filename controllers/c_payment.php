@@ -6,7 +6,7 @@ $title = "Unggah Bukti Pembayaran";
 $id = $_GET['id'];
 
 if($id == "") {
-    header("Location: {$fn->site_url('/orders')}");
+    header("Location: {$fn->site_url('/order')}");
 }
 
 $hscripts ='<link rel="stylesheet" href="'.site_url('/assets/plugins/fancybox/jquery.fancybox.min.css').'">';
@@ -15,7 +15,7 @@ $fscripts = '<script src="'.site_url('/assets/plugins/fancybox/jquery.fancybox.m
 $order = $mysql->query("SELECT * FROM orders WHERE (id = $id AND user_id = ".$_SESSION['id_user'].") AND (status = 'unpaid' OR status = 'verification')");
 
 if(mysqli_num_rows($order) < 1) {
-    header("Location: ".site_url('orders'));
+    header("Location: ".site_url('/order'));
 }
 
 $order = $order->fetch_object();
